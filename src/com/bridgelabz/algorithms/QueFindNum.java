@@ -1,0 +1,26 @@
+package com.bridgelabz.algorithms;
+import utility.Utility;
+
+public class QueFindNum 
+{
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		
+		System.out.println("Enter the value of n :");
+		//int n = Integer.parseInt(args[0]);
+		int n  = Utility.inputNumber();
+		int k = (int) Math.pow(2, n);
+		int arr[] = new int[k];
+		for(int j=0;j<k;j++)
+		{
+			arr[j]=j;
+		}
+		Utility.yournum(arr);
+		System.out.println("User Input value: "+n);
+		System.out.println("2^n Value : "+k);	
+		
+	}
+
+}
