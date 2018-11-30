@@ -24,6 +24,10 @@ public class Utility
 			return sc.nextDouble();
 		}
 		
+		public static String inputStr()
+		{
+			return sc.next();
+		}
 		
 		
 //**********************************************************************************
@@ -374,7 +378,7 @@ public class Utility
 						System.out.print(i+" ");	//Print the prime numbers
 						
 						intArray[k] = i;		//scan the result into an integer array
-						checkPalindrome(i);
+						checkIntPalindrome(i);
 						System.out.println(" ");	
 						k++;						//scan until the last element
 					}
@@ -424,7 +428,7 @@ public class Utility
 		
 //*********************************************************************************
 		
-			public static void checkPalindrome(int k)
+			public static void checkIntPalindrome(int k)
 			{
 				int numberToCheck = k;
 				int numberInReverse = 0;
@@ -821,7 +825,7 @@ public class Utility
 //		  System.out.println(y0);
 //		  System.out.println(x);
 //		  System.out.println(m0);
-		  System.out.println(d0);
+		 // System.out.println(d0);
 		
 		  return d0;
 		//change logic
@@ -1168,7 +1172,7 @@ public class Utility
 
 	//*************************************************************************************************
 
-	  public static double squareroot(double c)
+	  public static double squareRoot(double c)
 	  {
 		  double epsilon = 1e-15;    
 	        double t = c;              // calculate the square root of c
@@ -1360,9 +1364,25 @@ public class Utility
 	 
 	//*********************************************************************************** 
 	 
+	 public static boolean stringPalindrome(String str)
+	 {
+			String reverse = "";
+			boolean flag = false;
+			int length = str.length();
+			for ( int i = length - 1; i >= 0; i-- )
+			{
+				 reverse = reverse + str.charAt(i);
+			}
+		    if (str.equals(reverse))		       
+		    	flag = true;
+		    else		       
+		    	flag = false;
 	 
+	 return flag;
 	 
+	 }
 	 
+	//*********************************************************************************** 
 	 
 	 
 	 

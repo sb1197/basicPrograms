@@ -20,9 +20,9 @@ public class SqrtNewtonMethod {
 		  else
 		  {
 			 // print out the square root of c	       
-			  double result = Utility.squareroot(number);
+			  double result = Utility.squareRoot(number);
 			  System.out.println("Square root of given number "+number+" is :"+result);
 		  }
 	}
-//take input again when invalid
+
 }
