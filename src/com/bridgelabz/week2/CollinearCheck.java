@@ -1,8 +1,10 @@
-package com.bridgelabz.libraries;
+package com.bridgelabz.week2;
+
+import com.bridgelabz.libraries.MathFunction;
 
 import utility.Utility;
 
-public class Demo {
+public class CollinearCheck {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

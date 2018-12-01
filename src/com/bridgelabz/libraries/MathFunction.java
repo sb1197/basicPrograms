@@ -2,7 +2,13 @@ package com.bridgelabz.libraries;
 
 public class MathFunction {
 
-	 public static int dayOfWeek(int d, int m, int y) 
+	 /**
+	 * @param d return date
+	 * @param m return month
+	 * @param y return year
+	 * @return This method takes input 
+	 */
+	public static int dayOfWeek(int d, int m, int y) 
 	  {
 		  // Calculate day of week by taking date input from user.
 		  int y0 = y-(14 - m) / 12;
@@ -192,6 +198,14 @@ public class MathFunction {
 	 
 	//**********************************************************************************   	
 		
+		/**
+		 * @param x1
+		 * @param y1
+		 * @param x2
+		 * @param y2
+		 * @param x3
+		 * @param y3
+		 */
 		public static void checkCollinearUsingArea(int x1, int y1, int x2, int y2, int x3, int y3)
 		{
 			int area = x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y1 - y2); 

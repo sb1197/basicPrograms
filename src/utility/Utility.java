@@ -1,6 +1,8 @@
 package utility;
 import java.util.*;
 
+import com.bridgelabz.libraries.MathFunction;
+
 
 public class Utility
 {
@@ -115,15 +117,7 @@ public class Utility
 	        System.out.println("Percent of games won = " + 100.0 * wins / trials);
 	        System.out.println("No of bets : "+bets);
 	        System.out.println("Average bets           = " + 1.0 * bets / trials);
-		}
-		
-//********************************************************************************
-		
-		public static void strpermute()
-		{
-			
-		}
-		
+		}	
 		
 		
 //********************************************************************************
@@ -318,7 +312,7 @@ public class Utility
 		
 				/*********ALGORITHM PROGRAMS*******/
 		
-		//***********************************************************************************
+	//***********************************************************************************
 		 
 		public static void anagram(String str1, String str2)
 		{
@@ -1384,11 +1378,144 @@ public class Utility
 	 
 	//*********************************************************************************** 
 	 
+		public static void strIterativePermutation(String prefix, String str) {
+		    int n = str.length();
+		    if (n == 0) 
+		    	System.out.println(prefix);
+		    else 
+		    {
+		        for (int i = 0; i < n; i++)
+		        	strIterativePermutation(prefix + str.charAt(i), str.substring(0, i) + str.substring(i+1, n));
+		    }
+		}
 	 
+	 //*****************************************************************************************
+		
+		public static void strPermute(char[] char_arr, int i)
+		{
+		    if(i==char_arr.length-1)
+		    {
+		        // print the shuffled string 
+		            String str="";
+		            for(int j=0; j<char_arr.length; j++)
+		            {
+		                str=str+char_arr[j];
+		            }
+		            System.out.println(str);
+		    }
+		    else
+		    {
+			    for(int j=i; j<char_arr.length; j++)
+			    {
+			        char tmp = char_arr[i];
+			        char_arr[i] = char_arr[j];
+			        char_arr[j] = tmp;
+			        strPermute(char_arr,i+1);
+			        char tmp1 = char_arr[i];
+			        char_arr[i] = char_arr[j];
+			        char_arr[j] = tmp1;
+			    }
+		    }
+		}
 	 
-	 
-	 
-	 
+	 //*****************************************************************************************
+
+		public static double calcSine(double num)
+		{
+			//Convert angle x to an angle between -­2PI and 2PI
+			double x = num % (2 * 3.14159);
+			System.out.println("Convert angle: "+x);
+			double sum = 0.0,term = 1.0;
+			double numerator,denominator;
+			int count = 0;
+			for(int i = 1;term!=0.0; i++)
+			{
+				numerator = Math.pow(x, i);
+				System.out.println("Numerator:"+numerator);
+				denominator = MathFunction.findFactorial(i);
+				System.out.println("Denominator:"+denominator);
+				term = ( numerator / denominator);
+				if (i % 4 == 1) 
+					sum = sum + term;
+	            if (i % 4 == 3) 
+	            	sum = sum - term;
+	            count++;
+			}	
+			//System.out.println("Count:"+count);
+			return sum;
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
 

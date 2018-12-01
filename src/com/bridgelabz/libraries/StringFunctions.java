@@ -69,7 +69,8 @@ public class StringFunctions {
 		// Recursive function to generate all permutations of a String
 		public static void strRecursivePermutations(char[] ch, int currentIndex)
 		{
-			if (currentIndex == ch.length - 1) {
+			if (currentIndex == ch.length - 1) 
+			{
 				System.out.println(String.valueOf(ch));
 			}
 
@@ -77,20 +78,44 @@ public class StringFunctions {
 			{
 				stringSwap(ch, currentIndex, i);
 				strRecursivePermutations(ch, currentIndex + 1);
-				stringSwap(ch, currentIndex, i);
+				stringSwap(ch, currentIndex, i);		
 			}
+			
 		}
 
 		//*************************************************************************************************
 
 		// Iterative function to generate all permutations of a String in Java
 		
-		public static void strIterativePermutations(char[] ch, int currentIndex)
-		{
-
+		public static void strPermutation(char[] char_arr, int i)
+		{			
+		    if(i==char_arr.length-1)
+		    {
+		        // print the shuffled string 
+		            String str="";
+		            for(int j=0; j<char_arr.length; j++)
+		            {
+		                str=str+char_arr[j];
+		            }
+		            System.out.println(str);
+		    }
+		    else
+		    {
+			    for(int j=i; j<char_arr.length; j++)
+			    {
+			        char tmp = char_arr[i];
+			        char_arr[i] = char_arr[j];
+			        char_arr[j] = tmp;
+			        strPermutation(char_arr,i+1);
+			        char tmp1 = char_arr[i];
+			        char_arr[i] = char_arr[j];
+			        char_arr[j] = tmp1;
+			      
+			    }
+		    }
 		}
 
-
+		//*************************************************************************************************
 
 
 

@@ -1,20 +1,60 @@
 package com.bridgelabz.functional;
 
+import utility.Utility;
+
 public class StringPermutation {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		char str[] = new char[] {'a', 'b', 'c'};
-		int n = str.length;
-		int i, j;
-		System.out.println("Permutation of given string is:");
-		for(i=0;i<n;i++) {
-			for(j=0;j<i;j++) {
-			char temp = str[i];
-			str[i] = str[j];
-			str[j] = temp;
-			}
-			System.out.println(str);
-		}	
+		// TODO Auto-generated method stub	
+		
+		System.out.println("Enter the string to find permutations :");
+		String s1 = Utility.inputStr();	
+		char array[] = s1.toCharArray();
+		//Utility.strPermute(array, 0);
+		Utility.strIterativePermutation("",s1);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 }

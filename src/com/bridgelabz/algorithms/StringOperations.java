@@ -62,10 +62,10 @@ public class StringOperations
 					break;
 			
 				case 4:
-					System.out.println("Enter a sting to find all Permutations of Using Iterative Method:");
-					String str = Utility.inputStr();
+					System.out.println("Enter a string to find all Permutations of Using Iterative Method:");
+					String string = Utility.inputStr();
 					
-					StringFunctions.strIterativePermutations(str.toCharArray(), 0);
+					StringFunctions.strPermutation(string.toCharArray(), 0);
 					break;
 			
 				default:
@@ -76,26 +76,7 @@ public class StringOperations
 			System.out.println("Do you want to continue (0=Exit/1=Continue):");
 			cont = Utility.inputNumber();
 		}while(cont==1);
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		
 	}
 
 }
