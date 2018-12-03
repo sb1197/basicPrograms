@@ -1,3 +1,10 @@
+/**
+ * Purpose  : This program is used to search a number and word using binary search method.			  
+ * @author  : Shweta Bochare
+ * @version : 1.0
+ * @since   : 13/11/18
+ */
+
 package com.bridgelabz.algorithms;
 import utility.Utility;
 

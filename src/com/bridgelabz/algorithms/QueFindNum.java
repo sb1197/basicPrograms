@@ -1,9 +1,16 @@
+/**
+ * Purpose  : This program is used to guess a number using binary search method.			  
+ * @author  : Shweta Bochare
+ * @version : 1.0
+ * @since   : 01/12/18
+ */
+
+
 package com.bridgelabz.algorithms;
 import utility.Utility;
 
 public class QueFindNum 
 {
-
 	public static void main(String[] args) 
 	{
 		// TODO Auto-generated method stub
@@ -17,7 +24,7 @@ public class QueFindNum
 		{
 			arr[j]=j;
 		}
-		Utility.yournum(arr);
+		Utility.yourNumber(arr);
 		System.out.println("User Input value: "+n);
 		System.out.println("2^n Value : "+k);	
 		

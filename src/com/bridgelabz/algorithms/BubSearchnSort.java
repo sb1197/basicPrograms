@@ -23,7 +23,7 @@ public class BubSearchnSort {
 		{
 			System.out.println(ar[i]);
 		}
-		Utility.BubIntsort(ar, k);
+		Utility.BubbleIntsort(ar, k);
 		
 		double stop1=System.currentTimeMillis();
 		

@@ -9,8 +9,9 @@ public class Sin {
 		System.out.println("Enter a number to find Taylor Series :");
 		double angle = Utility.doubleNumber();
 		System.out.println("Input number is" +angle);
-		
-		double result = Utility.calcSine(angle);
+		System.out.println("Enter a number upto find Taylor Series :");
+		int n = Utility.inputNumber();
+		double result = Utility.calcSine(angle,n);
 		System.out.println("Taylor Series for "+angle+" gives "+result);
 	}
 

@@ -1,8 +1,16 @@
+/**
+ * Purpose  : This program is used to sort the integer array using Bubble Sort method.			  
+ * @author  : Shweta Bochare
+ * @version : 1.0
+ * @since   : 01/12/18
+ */
+
+
 package com.bridgelabz.algorithms;
 import java.util.*;
 
 import utility.Utility;
-public class BubleIntsort {
+public class BubbleIntsort {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -24,12 +32,12 @@ public class BubleIntsort {
 				System.out.println(numbers.get(i));
 				 tokens[i] = numbers.get(i);
 	      }
-	      System.out.println("Converted array is :");
-	      for (int j = 0; j < n; j++) 
-	      {
-	    	  System.out.println(tokens[j]);
-	      }
-	     Utility.BubIntsort(tokens, n);
+//	      System.out.println("Converted array is :");
+//	      for (int j = 0; j < n; j++) 
+//	      {
+//	    	  System.out.println(tokens[j]);
+//	      }
+	     Utility.BubbleIntsort(tokens, n);
 	    
 			
 	}

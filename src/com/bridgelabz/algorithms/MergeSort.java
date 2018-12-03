@@ -1,3 +1,10 @@
+/**
+ * Purpose  : This program is used to sort the string array using Merge Sort method.			  
+ * @author  : Shweta Bochare
+ * @version : 1.0
+ * @since   : 01/12/18
+ */
+
 package com.bridgelabz.algorithms;
 import java.util.*;
 
@@ -30,12 +37,15 @@ public class MergeSort
 	      {
 				System.out.println(tokens[i]);
 	      }
-	      Utility.Msort(tokens, 0, n);
+	      Utility.mergeSort(tokens, 0, n);
 	      System.out.println("Sorted array is :");
 	      for (int i = 0; i < strings.size();i++) 
 	      {
 				System.out.println(tokens[i]);
 	      }
+	      
+	      
+	      
 	}
 
 }

@@ -1,3 +1,11 @@
+/**
+ * Purpose  : This program is used to sort the strings using the Insertion Sort.			  
+ * @author  : Shweta Bochare
+ * @version : 1.0
+ * @since   : 01/12/18
+ */
+
+
 package com.bridgelabz.algorithms;
 import java.util.Arrays;
 
@@ -9,7 +17,7 @@ public class InsertionSort {
 	{
 		// TODO Auto-generated method stub
 		
-		System.out.println("Input String to be sorted :");
+		System.out.println("Input Strings to be sorted :");
 		String tokens[] = Utility.inputString().split(" ");
 		int k = tokens.length;
 		System.out.println(Arrays.asList(tokens));

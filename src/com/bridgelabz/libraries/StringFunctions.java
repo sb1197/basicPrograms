@@ -2,9 +2,13 @@ package com.bridgelabz.libraries;
 
 import java.util.Arrays;
 
-//import utility.Utility;
 public class StringFunctions {
 		
+	/**
+	 * @param str1 user input String 1
+	 * @param str2 user input String 2
+	 * @return This method checks whether input strings are anagram or not
+	 */
 	public static void checkAnagram(String str1, String str2)
 	{
 			int m = str1.length();
@@ -38,7 +42,11 @@ public class StringFunctions {
 
 	//*************************************************************************************************
 
-	 public static boolean stringPalindrome(String str)
+	 /**
+	 * @param str user input string
+	 * @return This method check whether given string is palindrome or not
+	 */
+	public static boolean stringPalindrome(String str)
 	 {
 			String reverse = "";
 			boolean flag = false;
@@ -58,7 +66,13 @@ public class StringFunctions {
 
 	//*************************************************************************************************
 
-	// Utility function to swap two characters in a character array
+	
+		/**
+		 * @param ch is a character array 
+		 * @param i is start value of character array
+		 * @param j is the end value of character array
+		 * @return This method is used to swap the character array 
+		 */
 		public static void stringSwap(char[] ch, int i, int j)
 		{
 			char temp = ch[i];
@@ -67,6 +81,11 @@ public class StringFunctions {
 		}
 
 		// Recursive function to generate all permutations of a String
+		/**
+		 * @param ch is a character array 
+		 * @param currentIndex is an index value of array
+		 * @return This method is used to find all permutations of input string
+		 */
 		public static void strRecursivePermutations(char[] ch, int currentIndex)
 		{
 			if (currentIndex == ch.length - 1) 
@@ -87,6 +106,10 @@ public class StringFunctions {
 
 		// Iterative function to generate all permutations of a String in Java
 		
+		/**
+		 * @param char_arr is a character array 
+		 * @param i is an index value of array
+		 */
 		public static void strPermutation(char[] char_arr, int i)
 		{			
 		    if(i==char_arr.length-1)
