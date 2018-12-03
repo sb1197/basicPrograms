@@ -146,7 +146,7 @@ public class MathFunction {
 	public static int findFactorial(int n)
 	{
 		 int i,fact=1;  
-		 for(i=1;i<=n;i++)
+		 for(i=1;i<=n;i++)		//Traverse from i=1 to n
 		 {    
 		      fact=fact*i;    
 		 }    
@@ -193,9 +193,10 @@ public class MathFunction {
 	public static int getMaxValue(int[] numbers)
 	 {
 		  int maxValue = numbers[0];
+		// Compare the values till end
 		  for(int i=1;i < numbers.length;i++)
 		  {
-			    if(numbers[i] > maxValue)
+			    if(numbers[i] > maxValue)		//Check array value with previous element
 			    {
 			    	maxValue = numbers[i];
 				}
@@ -212,9 +213,10 @@ public class MathFunction {
 		public static int getMinValue(int[] numbers)
 		{
 			  int minValue = numbers[0];
+			  // Compare the values till end
 			  for(int i=1;i<numbers.length;i++)
 			  {
-				  if(numbers[i] < minValue)
+				  if(numbers[i] < minValue)			//Check array value with previous element
 				  {
 					  minValue = numbers[i];
 				  }
@@ -237,6 +239,7 @@ public class MathFunction {
 		
 	public static void checkCollinearUsingSlope(int x1, int y1, int x2, int y2, int x3, int y3)
 	{
+		 //Check points are collinear using slope formula
 		 	int slopeAB = (y2 - y1) / (x2 - x1);
 			int slopeBC = (y3 - y2) / (x3 - x2);
 			int slopeAC = (y3 - y1) / (x3 - x1);
@@ -263,7 +266,7 @@ public class MathFunction {
 	 */
 	public static void checkCollinearUsingArea(int x1, int y1, int x2, int y2, int x3, int y3)
 	{
-			int area = x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y1 - y2); 
+			int area = x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y1 - y2);  //Check points are collinear using area formula
 			if(area == 0)
 			{
 				 System.out.println("The points are collinear");
@@ -275,7 +278,87 @@ public class MathFunction {
 		
 	//**********************************************************************************  	
 		
+	/**
+	 * @param theta is an angle input
+	 * @param n is the nth term to find Taylor series upto n
+	 * @return This method returns the Taylor series of sin(x) upto nth term
+	 */
+	public static double calcSine(double theta, int n)
+	{
+		//Convert angle x to an angle between -­2PI and 2PI
+		double x = theta * ( Math.PI/180);
+		System.out.println("Convert angle: "+x);
 		
+		double sum = 0.0,term = 1.0;
+		double numerator,denominator;
+		
+		for(int i = 1;i <= n; i++)
+		{
+			if(term!= 0.0)
+			{
+				if(i % 2 == 1)		//To iterate the i value with even numbers
+				{
+					//To calculate the numerator value using Math.power()			
+					numerator = Math.pow(x, i);
+					System.out.println("Numerator:"+numerator);
+					// To calculate te denominator value using factorial()
+					denominator = MathFunction.findFactorial(i);
+					System.out.println("Denominator:"+denominator);
+					term = term * ( numerator / denominator);
+				}
+				if (i % 4 == 1) 
+					sum = sum + term;
+	            if (i % 4 == 3) 
+	            	sum = sum - term;
+			}
+		}	
+		
+		return sum;
+	}
+
+
+//*****************************************************************************************
+
+	/**
+	 * @param theta is an angle input
+	 * @param n is the nth term to find Taylor series upto n
+	 * @return This method returns the Taylor series of cos(x) upto nth term
+	 */
+	public static double calcCosine(double theta, int n)
+	{
+		//Convert angle x to an angle between -­2PI and 2PI
+		double x = theta * ( Math.PI/180);
+		System.out.println("Convert angle: "+x);
+		
+		double sum = 0.0,term = 1.0;
+		double numerator,denominator;
+		
+		for(int i = 1;i <= n; i++)
+		{
+			if(term!= 0.0)
+			{
+				if(i % 2 == 0)		//To iterate the i value with even numbers
+				{
+					//To calculate the numerator value using Math.power()
+					numerator = Math.pow(x, i);
+					System.out.println("Numerator:"+numerator);
+					// To calculate te denominator value using factorial()
+					denominator = MathFunction.findFactorial(i);
+					System.out.println("Denominator:"+denominator);
+					term = term * ( numerator / denominator);
+				}
+				if (i % 4 == 0) 
+					sum = sum + term;
+	            if (i % 4 == 2) 
+	            	sum = sum - term;
+			}
+		}	
+		
+		return sum;
+	}
+
+	//*****************************************************************************************
+
 		
 		
 		

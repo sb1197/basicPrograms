@@ -27,10 +27,11 @@ public class LargestandSmallest {
 		{
 			System.out.print(array[i]+" ");
 		}
-		Utility.secondLargestInt(array, size);
+		int result1 = Utility.secondLargestInt(array, size);
+		System.out.println("\nSecond largest number is:" + result1);	
 	
-		Utility.secondSmallestInt(array, size);
-		
+		int result2 =Utility.secondSmallestInt(array, size);
+		System.out.println("\nSecond smallest number is:" +result2);		
 	}
 
 }

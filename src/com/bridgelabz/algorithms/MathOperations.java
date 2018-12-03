@@ -28,9 +28,25 @@ public class MathOperations {
 					break;
 				
 				case 2:  // TO RETURN A SINE VALUE OF ANGLE
+					System.out.println("Enter an angle to find Taylor Series :");
+					double angle = Utility.doubleNumber();
+					System.out.println("Input number is" +angle);
+					System.out.println("Enter a number upto find Taylor Series :");
+					int n = Utility.inputNumber();
+					
+					double res = Utility.calcSine(angle,n);
+					System.out.println("Taylor Series for "+angle+" gives "+res);
 					break;
 				
 				case 3:  // TO RETURN A COSINE VALUE OF ANGLE
+					System.out.println("Enter an angle to find Taylor Series :");
+					double angle1 = Utility.doubleNumber();
+					System.out.println("Input number is" +angle1);
+					System.out.println("Enter a number upto find Taylor Series :");
+					int num = Utility.inputNumber();
+					
+					double result1 = Utility.calcCosine(angle1,num);
+					System.out.println("Taylor Series for "+angle1+" gives "+result1);
 					break;
 				
 				case 4:  //TO CONVERT GIVEN NUMBER INTO BINARY FORM

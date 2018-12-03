@@ -865,7 +865,11 @@ public class Utility
 
 	//*************************************************************************************************
 
-	  public static void convertTemp(double temp)
+	  /**
+	 * @param temp input temperature in celsius or fahrenheit
+	 * @return This method is used to convert temperature from celsius to fahrenheit
+	 */
+	public static void convertTemp(double temp)
 	  {
 		  double celsius, fahrenheit;
 		 //return results to main
@@ -911,7 +915,13 @@ public class Utility
 
 	//*************************************************************************************************
 
-	  public static int dayOfWeek(int d, int m, int y) 
+	  /**
+	 * @param d is input day
+	 * @param m is input month
+	 * @param y is input year
+	 * @return This method calculates the day of week the date falls on
+	 */
+	public static int dayOfWeek(int d, int m, int y) 
 	  {
 		  // Calculate day of week by taking date input from user.
 		  int y0 = y-(14 - m) / 12;
@@ -1000,7 +1010,11 @@ public class Utility
 	//*************************************************************************************************
 
 
-	  public static void decimalToBinary(int n)
+	  /**
+	 * @param n input decimal number
+	 * @return This method is used to convert input decimal number to binary
+	 */
+	public static void decimalToBinary(int n)
 	  {
 		// array to store binary number 
 	        int[] binaryNum = new int[1000]; 
@@ -1073,7 +1087,11 @@ public class Utility
 		//*************************************************************************************************
 
 	 
-	  public static boolean checkLeapYear(int year)
+	  /**
+	 * @param year is input year
+	 * @return This method is used to check whether input year isleap year or not
+	 */
+	public static boolean checkLeapYear(int year)
 	  {
 		  boolean isLeap = false;	 
 			  if(year % 4 == 0)
@@ -1219,7 +1237,12 @@ public class Utility
 
 	//*************************************************************************************************
 
-	  public static void state5(int a,int b)
+	  /**
+	 * @param a starting range
+	 * @param b ending range
+	 * @return This method is used to generate 5 random numbers an calculate min, max, and average of random numbers 
+	 */
+	public static void state5(int a,int b)
 	  {
 		  double num1,num2,num3,num4,num5;
 		  double min,max,average;
@@ -1275,7 +1298,11 @@ public class Utility
 
 	//*************************************************************************************************
 
-	  public static double squareRoot(double c)
+	  /**
+	 * @param c input number 
+	 * @return This method returns the square root of input number
+	 */
+	public static double squareRoot(double c)
 	  {
 		  double epsilon = 1e-15;    
 	        double t = c;              // calculate the square root of c
@@ -1291,7 +1318,12 @@ public class Utility
 	//*************************************************************************************************
 
 
-	  public static void printRepeating(int arr[], int size)  
+	  /**
+	 * @param arr are the elements of integer array
+	 * @param size is the size of array
+	 * @return This method return the repeated elements 
+	 */
+	public static void printRepeating(int arr[], int size)  
 	    { 
 	        int i, j; 
 	        System.out.println("Repeated Elements are :"); 
@@ -1308,7 +1340,11 @@ public class Utility
 
 	//*************************************************************************************************
 
-	 public static boolean isPowerOfTwo(int n) 
+	 /**
+	 * @param n is number input
+	 * @return This method returns if the input number is power of two or not
+	 */
+	public static boolean isPowerOfTwo(int n) 
 	    { 
 	        if (n == 0) 
 	            return false; 
@@ -1352,7 +1388,11 @@ public class Utility
 //******************************************************************************************
 	 
 
-	 public static int stringPattern(String initialName)
+	 /**
+	 * @param initialName is name input from user
+	 * @return This method returns the pattern of initial character KDW in asterisk pattern
+	 */
+	public static int stringPattern(String initialName)
 	 {
 		 int flag=1;
 		 if(initialName.charAt(0)=='K')
@@ -1416,7 +1456,12 @@ public class Utility
 	//***********************************************************************************
 	 
 	 
-	 public static void secondLargestInt(int arr[],int n)
+	 /**
+	 * @param arr is an integer array input
+	 * @param n is the size of an array
+	 * @return This method returns the second largest integer value from an array
+	 */
+	 public static int secondLargestInt(int arr[],int n)
 	 {
 		 int largest = arr[0];
 			int secondLargest = arr[0];
@@ -1434,13 +1479,18 @@ public class Utility
 					secondLargest = arr[i];	 
 				}
 			}
-	 
-			System.out.println("\nSecond largest number is:" + secondLargest);			 
+			return secondLargest;
+					 
 	 }
 	 
 	//***********************************************************************************
 	 
-	 public static void secondSmallestInt(int arr[],int n)
+	 /**
+	 * @param arr is an integer array input
+	 * @param n is the size of an array
+	 * @return This method returns the second smallest integer value from an array
+	 */
+	public static int secondSmallestInt(int arr[],int n)
 	 {
 		 int smallest = arr[0];
 			int secondSmallest = arr[0];
@@ -1461,17 +1511,22 @@ public class Utility
 		            secondSmallest = arr[i];
 		        }
 			}
-	 
-			System.out.println("\nSecond smallest number is:" + secondSmallest);			 
+			return secondSmallest;
+				 
 	 }
 	 
 	//*********************************************************************************** 
 	 
-	 public static boolean stringPalindrome(String str)
+	 /**
+	 * @param str is String input from user
+	 * @return This method returns the boolean value whether input string is Palindrome or not
+	 */
+	public static boolean stringPalindrome(String str)
 	 {
 			String reverse = "";
 			boolean flag = false;
 			int length = str.length();
+			//Reverse the input string to check Palindrome
 			for ( int i = length - 1; i >= 0; i-- )
 			{
 				 reverse = reverse + str.charAt(i);
@@ -1481,7 +1536,7 @@ public class Utility
 		    else		       
 		    	flag = false;
 	 
-	 return flag;
+		    return flag;
 	 
 	 }
 	 
@@ -1499,58 +1554,65 @@ public class Utility
 		}
 	 
 	 //*****************************************************************************************
-		
-		public static void strPermute(char[] char_arr, int i)
-		{
-		    if(i==char_arr.length-1)
-		    {
-		        // print the shuffled string 
-		            String str="";
-		            for(int j=0; j<char_arr.length; j++)
-		            {
-		                str=str+char_arr[j];
-		            }
-		            System.out.println(str);
-		    }
-		    else
-		    {
-			    for(int j=i; j<char_arr.length; j++)
-			    {
-			        char tmp = char_arr[i];
-			        char_arr[i] = char_arr[j];
-			        char_arr[j] = tmp;
-			        strPermute(char_arr,i+1);
-			        char tmp1 = char_arr[i];
-			        char_arr[i] = char_arr[j];
-			        char_arr[j] = tmp1;
-			    }
-		    }
-		}
+//		
+//		public static void strPermute(char[] char_arr, int i)
+//		{
+//		    if(i==char_arr.length-1)
+//		    {
+//		        // print the shuffled string 
+//		            String str="";
+//		            for(int j=0; j<char_arr.length; j++)
+//		            {
+//		                str=str+char_arr[j];
+//		            }
+//		            System.out.println(str);
+//		    }
+//		    else
+//		    {
+//			    for(int j=i; j<char_arr.length; j++)
+//			    {
+//			        char tmp = char_arr[i];
+//			        char_arr[i] = char_arr[j];
+//			        char_arr[j] = tmp;
+//			        strPermute(char_arr,i+1);
+//			        char tmp1 = char_arr[i];
+//			        char_arr[i] = char_arr[j];
+//			        char_arr[j] = tmp1;
+//			    }
+//		    }
+//		}
 	 
 	 //*****************************************************************************************
 
-		public static double calcSine(double num, int n)
+		/**
+		 * @param theta is an angle input
+		 * @param n is the nth term to find Taylor series upto n
+		 * @return This method returns the Taylor series of sin(x) upto nth term
+		 */
+		public static double calcSine(double theta, int n)
 		{
 			//Convert angle x to an angle between -­2PI and 2PI
-			double x = num % (2 * 3.14159);
+			double x = theta * ( Math.PI/180);
 			System.out.println("Convert angle: "+x);
 			double sum = 0.0,term = 1.0;
 			double numerator,denominator;
-			int count = 0;
-			for(int i = 1;i<n; i++)
+			
+			for(int i = 1;i <= n; i++)
 			{
 				if(term!= 0.0)
 				{
-					numerator = Math.pow(x, i);
-					System.out.println("Numerator:"+numerator);
-					denominator = MathFunction.findFactorial(i);
-					System.out.println("Denominator:"+denominator);
-					term = term * ( numerator / denominator);
+					if(i % 2 == 1)
+					{
+						numerator = Math.pow(x, i);
+						System.out.println("Numerator:"+numerator);
+						denominator = MathFunction.findFactorial(i);
+						System.out.println("Denominator:"+denominator);
+						term = term * ( numerator / denominator);
+					}
 					if (i % 4 == 1) 
 						sum = sum + term;
 		            if (i % 4 == 3) 
 		            	sum = sum - term;
-		            count++;
 				}
 			}	
 			//System.out.println("Count:"+count);
@@ -1560,7 +1622,44 @@ public class Utility
 
 	//*****************************************************************************************
 
+		/**
+		 * @param theta is an angle input
+		 * @param n is the nth term to find Taylor series upto n
+		 * @return This method returns the Taylor series of cos(x) upto nth term
+		 */
+		public static double calcCosine(double theta, int n)
+		{
+			//Convert angle x to an angle between -­2PI and 2PI
+			double x = theta * ( Math.PI/180);
+			System.out.println("Convert angle: "+x);
+			double sum = 0.0,term = 1.0;
+			double numerator,denominator;
+			
+			for(int i = 1;i <= n; i++)
+			{
+				if(term!= 0.0)
+				{
+					if(i % 2 == 0)
+					{
+						numerator = Math.pow(x, i);
+						System.out.println("Numerator:"+numerator);
+						denominator = MathFunction.findFactorial(i);
+						System.out.println("Denominator:"+denominator);
+						term = term * ( numerator / denominator);
+					}
+					if (i % 4 == 0) 
+						sum = sum + term;
+		            if (i % 4 == 2) 
+		            	sum = sum - term;
+				}
+			}	
+			//System.out.println("Count:"+count);
+			return sum;
+		}
 
+		//*****************************************************************************************
+				
+		
 		public static void getRandomIntegerBetweenRange(double min, double max)
 		{
 			int arr[] = new int[5];
