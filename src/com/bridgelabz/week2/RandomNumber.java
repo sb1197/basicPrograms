@@ -20,7 +20,7 @@ public class RandomNumber {
         Random rand = new Random();
         while(list.size() > 0) 
         {
-            int index = rand.nextInt(list.size());
+            int index =  rand.nextInt(list.size());
             System.out.println("Selected: "+list.remove(index));
         }
 		

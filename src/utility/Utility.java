@@ -1,4 +1,7 @@
 package utility;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.*;
 
 import com.bridgelabz.libraries.MathFunction;
@@ -1683,28 +1686,86 @@ public class Utility
 		public static void countOccurences(String str)  
 		{ 
 		    // split the string by spaces in array 
-		    String a[] = str.split(" "); 
-		  
+		    String[] a = str.split(" "); 
+		    for(int k=0;k<a.length;k++)
+		    {
+		    	System.out.println(a[k]);
+		    }
+//		    Arrays.sort(a);
+//		    System.out.println("sorted array :");
+//		    for(int k=0;k<a.length;k++)
+//		    {
+//		    	System.out.println(a[k]);
+//		    }
+		    System.out.println();
 		    // search for pattern in a 
-		    int count = 0; 
+		    int count = 1; 
 		    for (int i = 0; i < a.length; i++)  
 		    { 
-			    // if match found increase count 
-			    if (a[i].compareTo(a[i+1])==0) 
-			    {
-			        count++; 
-			    System.out.println(a[i]+"  "+count);
-			    } 
-		  
+		    	for(int j=i+1;j<a.length;j++)
+		    	{
+				    // if match found then increase the count by 1 
+				    if (a[i].equals(a[j])) 
+				    {
+				        count=count+1; 
+				        a[j] = "0";
+				    } 
+		    	}
+		    	
+		    	if(a[i]!="0")
+		    	{
+		    		System.out.println(a[i]+"--"+count);	//Printing the word along with the count
+					count=1;
+		    	}
 		    }
 		} 
 
 	//*****************************************************************************************
 
 
+		public static void showLines(String fileName, int startLine, int endLine) 
+		{
+			String line = null;
+			int currentLineNo = 1;
+
+			try {
+					BufferedReader in = new BufferedReader (new FileReader(fileName));				
+					//read to startLine
+					while(currentLineNo<startLine) 
+					{
+						if (in.readLine()==null)
+						{
+							throw new IOException("File too small");
+						}
+						currentLineNo++;
+					}		
+					//read until endLine
+					while(currentLineNo<=endLine) 
+					{
+						line = in.readLine();
+						if (line==null) 
+						{
+							return;
+						}
+						//System.out.println(line);
+						String str = line;
+						
+						String newstr = str.replaceAll("0", " ");
+						
+						String newstr1 = newstr.replaceAll("1", "*");
+						System.out.println(newstr1);
+						currentLineNo++;
+						
+					}
+				} 
+				catch (IOException ex) 
+				{
+					System.out.println("Problem reading file.\n" + ex.getMessage());
+				} 
+		}
 
 
-
+	//*****************************************************************************************
 
 
 
