@@ -1,4 +1,4 @@
-package com.bridgelabz.algorithms;
+package com.bridgelabz.week2;
 import com.bridgelabz.libraries.MathFunction;
 import utility.Utility;
 
@@ -28,25 +28,22 @@ public class MathOperations {
 					break;
 				
 				case 2:  // TO RETURN A SINE VALUE OF ANGLE
-					System.out.println("Enter an angle to find Taylor Series :");
+					System.out.println("Enter an angle to find sine value :");
 					double angle = Utility.doubleNumber();
 					System.out.println("Input number is" +angle);
-					System.out.println("Enter a number upto find Taylor Series :");
-					int n = Utility.inputNumber();
-					
-					double res = Utility.calcSine(angle,n);
-					System.out.println("Taylor Series for "+angle+" gives "+res);
+					System.out.println("Sine of given angle :");
+	
+					double res = MathFunction.calculateSine(angle);
+					System.out.println("Sine value for "+angle+" gives "+res);
 					break;
 				
 				case 3:  // TO RETURN A COSINE VALUE OF ANGLE
-					System.out.println("Enter an angle to find Taylor Series :");
+					System.out.println("Enter an angle to find cosine value :");
 					double angle1 = Utility.doubleNumber();
 					System.out.println("Input number is" +angle1);
-					System.out.println("Enter a number upto find Taylor Series :");
-					int num = Utility.inputNumber();
 					
-					double result1 = Utility.calcCosine(angle1,num);
-					System.out.println("Taylor Series for "+angle1+" gives "+result1);
+					double result1 = MathFunction.calculateCosine(angle1);
+					System.out.println("Cosine value for "+angle1+" gives "+result1);
 					break;
 				
 				case 4:  //TO CONVERT GIVEN NUMBER INTO BINARY FORM

@@ -20,7 +20,7 @@ public class InsertionSort {
 		System.out.println("Input Strings to be sorted :");
 		String tokens[] = Utility.inputString().split(" ");
 		int k = tokens.length;
-		System.out.println(Arrays.asList(tokens));
+		//System.out.println(Arrays.asList(tokens));
 		System.out.println("Input Array is :");
 		for(int i=0;i<tokens.length;i++)
 		{

@@ -359,12 +359,22 @@ public class MathFunction {
 
 	//*****************************************************************************************
 
+		public static Double calculateSine(double angle)
+		{
+			double radians = angle*Math.PI/180;
+			return Math.sin(radians);
+		}
 		
 		
+		//************************************************************************************	
+
+		public static Double calculateCosine(double angle)
+		{
+			double radians = angle*Math.PI/180;
+			return Math.cos(radians);
+		}
 		
-		
-		
-		
+		//************************************************************************************	
 		
 		
 		

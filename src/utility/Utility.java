@@ -3,8 +3,11 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import com.bridgelabz.libraries.MathFunction;
+import com.bridgelabz.week3.KDWPattern;
 
 
 public class Utility
@@ -1663,6 +1666,11 @@ public class Utility
 		//*****************************************************************************************
 				
 		
+		/**
+		 * @param min is the starting range to generate RandomNumbers
+		 * @param max is the ending range to generate RandomNumbers
+		 * @return This method returns the Random numbers between given Range.
+		 */
 		public static void getRandomIntegerBetweenRange(double min, double max)
 		{
 			int arr[] = new int[5];
@@ -1683,6 +1691,10 @@ public class Utility
 
 	 //*****************************************************************************************
 
+		/**
+		 * @param str is a String 
+		 * @return This method returns the count of Occurences of a word in given String
+		 */
 		public static void countOccurences(String str)  
 		{ 
 		    // split the string by spaces in array 
@@ -1723,6 +1735,12 @@ public class Utility
 	//*****************************************************************************************
 
 
+		/**
+		 * @param fileName isthe name of file to be read
+		 * @param startLine is the line number from where to read the file
+		 * @param endLine is the line number upto which line the file to read
+		 * @return This method returns the Patterns that matches the initials of Name given by user 
+		 */
 		public static void showLines(String fileName, int startLine, int endLine) 
 		{
 			String line = null;
@@ -1768,34 +1786,98 @@ public class Utility
 	//*****************************************************************************************
 
 
+		/**
+		 * @param template is the String where we print the results
+		 * @param regexName is the firstname of user
+		 * @param firstName is the full name from user input
+		 * @return This method returns the message from template by replacing 
+		 * 			the details provided by the user using Regex.
+		 */
+		public static String replaceOperation(String template,String regexName,String firstName)
+	    {
+	    	 Pattern pattern = Pattern.compile(regexName);
+	    	 Matcher match = pattern.matcher(template);
+	         return match.replaceAll(firstName);
+	    }
+		
+
+	//*****************************************************************************************
 
 
+		/**
+		 * @param template is the String where we print the results
+		 * @param regexAnimal is the animal
+		 * @param regexSound is the sound of an animal
+		 * @return This method returns the message from template by replacing 
+		 * 			the animal and their respective sounds provided by the user using Regex.
+		 */
+		public static String poemReplace(String template, String regexAnimal, String regexSound)
+		{
+			 Pattern pattern = Pattern.compile(regexAnimal);
+	    	 Matcher match = pattern.matcher(template);
+	         return match.replaceAll(regexSound);
+		}
 
 
+	//*****************************************************************************************
+
+		public static boolean nameValidate(String name)
+		{
+			boolean flag = false;
+			Pattern pattern = Pattern.compile(name);
+			if (!pattern.matches("[a-zA-Z]*+",name)) 
+			{
+				System.out.println("Invalid name");		   
+			}
+			else
+				flag = true;
+			
+			return flag;			
+		}
+
+	//*****************************************************************************************
+
+		public static boolean contactValidate(String contact)
+		{	
+			 Pattern p = Pattern.compile("^(0/91)?[7-9][0-9]{9}$"); 
+		        Matcher m = p.matcher(contact); 
+		        return (m.find() && m.group().equals(contact)); 
+		}
 
 
+	//*****************************************************************************************
+
+		public static boolean emailValidate(String email)
+		{	
+			 Pattern p = Pattern.compile("^[a-zA-Z0-9_+&*-]+(?:\\."+ 
+                     "[a-zA-Z0-9_+&*-]+)*@" + 
+                     "(?:[a-zA-Z0-9-]+\\.)+[a-z" + 
+                     "A-Z]{2,7}$");
+					
+		        Matcher m = p.matcher(email); 
+		        return (m.find() && m.group().equals(email)); 
+		}
+
+	//*****************************************************************************************
+
+		public static boolean userIdValidate(String userId)
+		{	
+			 Pattern p = Pattern.compile("[A-Za-z0-9_]+"); 
+		        Matcher m = p.matcher(userId); 
+		        return (m.find() && m.group().equals(userId)); 
+		}
+
+	//*****************************************************************************************
 
 
+		public static boolean passwordValidate(String password)
+		{	
+			 Pattern p = Pattern.compile("(?=.[A-Z])(?=.\\d)(?=[@#$%]).{8}+"); 
+		        Matcher m = p.matcher(password); 
+		        return (m.find() && m.group().equals(password)); 
+		}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	//*****************************************************************************************
 
 
 

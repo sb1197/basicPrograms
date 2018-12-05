@@ -11,8 +11,8 @@ public class Sin {
 		System.out.println("Input number is" +angle);
 		System.out.println("Enter a number upto find Taylor Series :");
 		int n = Utility.inputNumber();
-		//double result = Utility.calcSine(angle,n);
-		double result = Utility.calcCosine(angle,n);
+		double result = Utility.calcSine(angle,n);
+		//double result = Utility.calcCosine(angle,n);
 		System.out.println("Taylor Series for "+angle+" gives "+result);
 	}
 

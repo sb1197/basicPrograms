@@ -2,7 +2,7 @@ package com.bridgelabz.week3;
 
 import utility.Utility;
 
-public class Pattern 
+public class KDWPattern 
 {			
 		public static void main(String[] args) 
 		{
@@ -38,4 +38,5 @@ public class Pattern
 		
 		
 		}
+
 }
