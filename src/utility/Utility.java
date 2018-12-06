@@ -37,6 +37,11 @@ public class Utility
 			return sc.next();
 		}
 		
+		public static boolean booleanValue()
+		{
+			return sc.nextBoolean();
+		}
+		
 		
 //**********************************************************************************
 		
@@ -424,7 +429,7 @@ public class Utility
 			int intArray[] = new int[n];
 			for(i=m;i<=n;i++)	//loop continue to given range
 			{
-				for(int j=2;j<i;j++)	// strat checking prime no
+				for(int j=2;j<i;j++)	// start checking prime no
 				{
 					if(i%j==0)		//check given number is prime or not
 					{
@@ -538,15 +543,21 @@ public class Utility
 			
 //********************************************************************************
 		
-			public static void BsearchString(String Strarr[], String searchstr)
+			/**
+			 * @param Strarr is the Sorted string array read from file
+			 * @param searchstr is the key element to be found
+			 * @return This method is used to search a word from wordlist read from a file
+			 * 
+			 */
+			public static void searchString(String Strarr[], String searchstr)
 			{
 				//Binary search on String array
 				int first=0, last=Strarr.length-1, mid = (first+last)/2;
 				while( first <= last )
 			    {
-			      if ( Strarr[mid].compareTo(searchstr)< 0 ) {
-			    	 
-			        first = mid + 1;  
+			      if ( Strarr[mid].compareTo(searchstr)< 0 )
+			      {
+			        first = mid + 1;  		
 			      }
 			      else if ( Strarr[mid].compareTo(searchstr)==0)
 			      {
@@ -554,14 +565,46 @@ public class Utility
 			        break;
 			      }
 			      else
+			      {
 			         last = mid - 1;
-			 
+			      }
 			      mid = (first + last)/2;
 			   }
 			   if (first > last)
 			      System.out.println(searchstr + " isn't present in the list.\n");
 				
 			}
+			
+//			public static void BsearchString(String Strarr[], String searchstr)
+//			{
+//				//Binary search on String array
+//				int i=0;
+//				int j=Strarr.length-1;
+//				int mid=(i+j)/2;
+//			
+//				while(i<=j)
+//				{
+//					if(Strarr[mid].compareTo(searchstr)>0)
+//					{
+//						j=mid-1;
+//					}
+//					else if(Strarr[mid].compareTo(searchstr)<0)
+//					{
+//						i=mid+1;
+//					}
+//					else
+//					{
+//						System.out.println("Element "+searchstr+" found at position "+(mid+1));
+//						break;
+//					}
+//					mid=(i+j)/2;
+//				}
+//				if(i>j)
+//				{
+//					System.out.println("Element not found");
+//				}
+//				
+//			}
 			
 //********************************************************************************
 			
@@ -603,7 +646,7 @@ public class Utility
 			 * @param k is the length of string array 
 			 * @return This method is used to sort the string array using the Insertion Sort
 			 */
-			public static void IsortSearch(String ar[],int k)
+			public static String[] insertSortSearch(String ar[],int k)
 			{
 				int i,j;
 //				System.out.println("Elements of String array are :");
@@ -626,11 +669,12 @@ public class Utility
 						}
 					}
 				}
-				System.out.println("Sorted Elements of String array are :");
-				for(i=0;i<k;i++)
-				{
-					System.out.println(ar[i]);
-				} 
+//				System.out.println("Sorted Elements of String array are :");
+//				for(i=0;i<k;i++)
+//				{
+//					System.out.println(ar[i]);
+//				} 
+				return ar;
 			}
 			
 //********************************************************************************
@@ -685,31 +729,7 @@ public class Utility
 					System.out.println(arr[i]);
 				}	
 			}
-			
-//********************************************************************************
-			
-			 /**
-			 * @param low is the lowest value of array
-			 * @param high is the highest value of array
-			 * @return This method is used to search/ guess a number using binary search logic.
-			 */
-			static void search(int low, int high)
-			{
-				 //Scanner sc2 = new Scanner(System.in);
-				int mid=(high+low)/2;
-				if(high==low)
-				{
-					System.out.println("your number is "+mid);
-					System.exit(0);
-				}
-				System.out.println("Is it less than "+mid);
-				boolean reply=sc.nextBoolean();
-				if(reply)
-					search(low,mid-1);
-				else 
-					search(mid+1, high);
-			}
-			
+
 //********************************************************************************
 	
 	public static void sort(String[] word)
@@ -745,6 +765,31 @@ public class Utility
 		Utility.search(low, high);
 	}
 
+	
+//********************************************************************************
+	
+	 /**
+	 * @param low is the lowest value of array
+	 * @param high is the highest value of array
+	 * @return This method is used to search/ guess a number using binary search logic.
+	 */
+	public static void search(int low, int high)
+	{
+		 //Scanner sc2 = new Scanner(System.in);
+		int mid=(high+low)/2;
+		if(high==low)
+		{
+			System.out.println("your number is "+mid);
+			System.exit(0);
+		}
+		System.out.println("Is it less than "+mid);
+		boolean reply=sc.nextBoolean();
+		if(reply)
+			search(low,mid-1);
+		else 
+			search(mid+1, high);
+	}
+	
 	   
 	//*************************************************************************************************
 
@@ -1821,6 +1866,10 @@ public class Utility
 
 	//*****************************************************************************************
 
+		/**
+		 * @param name is first name of user
+		 * @return This method checks the input validation of names
+		 */
 		public static boolean nameValidate(String name)
 		{
 			boolean flag = false;
@@ -1837,6 +1886,10 @@ public class Utility
 
 	//*****************************************************************************************
 
+		/**
+		 * @param contact is the contact of user
+		 * @return This method check the input validations of contact 
+		 */
 		public static boolean contactValidate(String contact)
 		{	
 			 Pattern p = Pattern.compile("^(0/91)?[7-9][0-9]{9}$"); 
@@ -1847,6 +1900,10 @@ public class Utility
 
 	//*****************************************************************************************
 
+		/**
+		 * @param email is the email id of user
+		 * @return This method check the input validations of email 
+		 */
 		public static boolean emailValidate(String email)
 		{	
 			 Pattern p = Pattern.compile("^[a-zA-Z0-9_+&*-]+(?:\\."+ 
@@ -1860,6 +1917,10 @@ public class Utility
 
 	//*****************************************************************************************
 
+		/**
+		 * @param userId is the userId of user
+		 * @return This method check the input validations of userId 
+		 */
 		public static boolean userIdValidate(String userId)
 		{	
 			 Pattern p = Pattern.compile("[A-Za-z0-9_]+"); 
@@ -1869,21 +1930,99 @@ public class Utility
 
 	//*****************************************************************************************
 
-
+		/**
+		 * @param password is the password of user
+		 * @return This method check the input validations of password 
+		 */
 		public static boolean passwordValidate(String password)
 		{	
-			 Pattern p = Pattern.compile("(?=.[A-Z])(?=.\\d)(?=[@#$%]).{8}+"); 
+			 Pattern p = Pattern.compile("((?=.*\\d)(?=.*[A-Z])(?=.*[!^&*@#$%]).{8,20})+"); 
 		        Matcher m = p.matcher(password); 
 		        return (m.find() && m.group().equals(password)); 
 		}
 
 	//*****************************************************************************************
 
+		/**
+		 * @param arr is an Integer array
+		 * @param start row value
+		 * @param size column value
+		 * @return This method prints Integer 2D array
+		 */
+		public static void integerArray(int arr[][],int start,int size)
+		{
+			 int i=start,j=size;
+			// To print Integer 2D array
+			 for(i=0;i<arr.length;i++) 
+			 {
+					for(j=0;j<arr.length;j++) 
+					{
+						System.out.print(arr[i][j]+" ");
+					}
+					System.out.println();
+			 }
+		}
 
+	//*****************************************************************************************
+		
+		/**
+		 * @param doubles is a Double array
+		 * @param start row value
+		 * @param size column value		
+		 * @return This method prints Double 2D array
+		 */
+		public static void doubleArray(double doubles[][],int start,int size)
+		{
+			int i=start,j=size;
+			// To print Double 2D array
+			 for(i=0;i<doubles.length;i++) 
+			 {
+					for(j=0;j<doubles.length;j++) 
+					{
+						System.out.print(doubles[i][j]+" ");
+					}
+					System.out.println();
+			 }
+		}
+	
+	//*****************************************************************************************
+		
+		/**
+		 * @param booleans is a Boolean array
+		 * @param start row value 
+		 * @param size column value
+		 * @return This method prints Boolean 2D array
+		 */
+		public static void booleanArray(boolean booleans[][],int start,int size)
+		{
+			int i=start,j=size;
+			// To print Boolean 2D array
+			 for(i=0;i<booleans.length;i++) 
+		        {
+					for(j=0;j<booleans.length;j++) 
+					{
+						System.out.print(booleans[i][j]+" ");
+					}
+					System.out.println();
+		        }
+		}
 
+	//*****************************************************************************************
 
-
-
+	
+		public static boolean isPrime(int n) 
+			{
+				int c = 0;
+				for(int i = 1; i<=n; i++)
+				{
+					if(n%i == 0)
+						c++;
+				}
+				if(c == 2)
+					return true;
+				else
+					return false;
+			}
 
 
 

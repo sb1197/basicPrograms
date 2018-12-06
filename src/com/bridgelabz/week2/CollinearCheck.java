@@ -1,3 +1,12 @@
+/**
+ * Purpose  : This program that takes x and y co-ordinates of three points as input and checks
+ * 			  the given points are collinear or not using slope and area formula.
+ * @author  : Shweta Bochare
+ * @version : 1.0
+ * @since   : 1/12/18
+ */
+
+
 package com.bridgelabz.week2;
 
 import com.bridgelabz.libraries.MathFunction;

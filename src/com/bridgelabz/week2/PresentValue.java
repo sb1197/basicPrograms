@@ -1,3 +1,12 @@
+/**
+ * Purpose  : This program that takes a money, rate of interest, year as input and outputs 
+ * 			  the Present value calculated.
+ * @author  : Shweta Bochare
+ * @version : 1.0
+ * @since   : 7/12/18
+ */
+
+
 package com.bridgelabz.week2;
 
 import com.bridgelabz.libraries.MathFunction;

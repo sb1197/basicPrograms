@@ -5,7 +5,7 @@
  * @since   : 01/12/18
  */
 
-package com.bridgelabz.algorithms;
+package com.bridgelabz.week3;
 import java.util.*;
 
 import utility.Utility;

@@ -1,3 +1,14 @@
+/**
+ * Purpose  : This program is to do four different math operations.
+ *  			1) To return an harmonic number. "
+				2) To return a sin of an angle. "
+				3) To return cosine of an angle."
+				4) To return Binary of a number.
+ * @author  : Shweta Bochare
+ * @version : 1.0
+ * @since   : 4/12/18
+ */
+
 package com.bridgelabz.week2;
 import com.bridgelabz.libraries.MathFunction;
 import utility.Utility;

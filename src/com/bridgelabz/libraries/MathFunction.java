@@ -122,7 +122,7 @@ public class MathFunction {
 	 * @param num is an Input number 
 	 * @return This method is to check input number is prime or not
 	 */
-	public static boolean primeNumber(int num)
+	public static boolean isPrimeNumber(int num)
 	 {
 		 boolean flag = false;
 	        for(int i = 2; i <= num/2; ++i)

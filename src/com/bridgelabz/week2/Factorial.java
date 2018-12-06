@@ -1,3 +1,12 @@
+/**
+ * Purpose  : This program that takes a number as input and outputs 
+ * 			  the Factorial value of input number.
+ * @author  : Shweta Bochare
+ * @version : 1.0
+ * @since   : 2/12/18
+ */
+
+
 package com.bridgelabz.week2;
 
 import com.bridgelabz.libraries.MathFunction;

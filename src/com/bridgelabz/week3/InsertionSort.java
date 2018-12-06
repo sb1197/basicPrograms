@@ -6,7 +6,7 @@
  */
 
 
-package com.bridgelabz.algorithms;
+package com.bridgelabz.week3;
 import utility.Utility;
 
 public class InsertionSort {
@@ -24,6 +24,11 @@ public class InsertionSort {
 		{
 			System.out.println(tokens[i]);
 		}
-		Utility.IsortSearch(tokens, k);
+		String sorted[] =Utility.insertSortSearch(tokens, k);
+		System.out.println("Sorted array");
+		for(int i=0;i<tokens.length;i++)
+		{
+			System.out.println(sorted[i]);
+		}
 	}
 }

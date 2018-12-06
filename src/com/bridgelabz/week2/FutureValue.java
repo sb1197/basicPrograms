@@ -1,3 +1,12 @@
+/**
+ * Purpose  : This program that takes a money, rate of interest, year as input and outputs 
+ * 			  the Future value calculated.
+ * @author  : Shweta Bochare
+ * @version : 1.0
+ * @since   : 6/12/18
+ */
+
+
 package com.bridgelabz.week2;
 
 import com.bridgelabz.libraries.MathFunction;
@@ -9,7 +18,7 @@ public class FutureValue {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		//TO CALCULATE FUTURE VALUE AND PRESENT VALUE
+		//TO CALCULATE FUTURE VALUE 
 		System.out.println("Enter money :");
 		double money = Utility.doubleNumber();
 		System.out.println("Enter rate of interest:");

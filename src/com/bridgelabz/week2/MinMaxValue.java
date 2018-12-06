@@ -1,3 +1,11 @@
+/**
+ * Purpose  : This program that takes an array as input and outputs 
+ * 			  the Minimum and Maximum number.
+ * @author  : Shweta Bochare
+ * @version : 1.0
+ * @since   : 6/12/18
+ */
+
 package com.bridgelabz.week2;
 
 import com.bridgelabz.libraries.MathFunction;

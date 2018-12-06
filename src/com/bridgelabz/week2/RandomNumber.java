@@ -1,3 +1,11 @@
+/**
+ * Purpose  : This program generates distinct Random numbers.
+ * @author  : Shweta Bochare
+ * @version : 1.0
+ * @since   : 3/12/18
+ */
+
+
 package com.bridgelabz.week2;
 
 import java.util.ArrayList;
