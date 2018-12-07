@@ -153,9 +153,10 @@ public class Utility
 		 * @param arr is an integer array
 		 * @return This method calulates the sum of triplets is zero or not
 		 */
-		public static void triplet(int n, int arr[])
+		public static void calculateTriplet(int n, int arr[])
 		{
-
+			System.out.println("Triplets are :");
+			int count = 0;
 			int flag=0;
 			for (int i = 0; i < n-2; i++)	
 			{
@@ -172,10 +173,12 @@ public class Utility
 			                System.out.print(arr[k]);
 			                System.out.println("\n");
 			                flag=1;
+			                count++;
 			            }
 			        }
 			    }
 			}
+			System.out.println("Number of triplets generated :"+count);
 			 if (flag==0) 
 			        System.out.println(" not exist "); 
 		}
@@ -420,9 +423,50 @@ public class Utility
 		 * @param m is lower value
 		 * @param n is higher value
 		 * @return This method check prime numbers within given range and 
-		 * 			pass those numbers to check palindrome and anagrams
+		 * 			pass those numbers to check palindrome.
 		 */
-		public static void primeNumber(int m, int n)
+		public static void primeNumberPalindrome(int m, int n)
+		{
+				int flag = 0;
+				int  k=0,i;
+				int intArray[] = new int[n];
+				for(i=m;i<=n;i++)	//loop continue to given range
+				{
+					for(int j=2;j<i;j++)	// start checking prime no
+					{
+						if(i%j==0)		//check given number is prime or not
+						{
+							flag = 0;
+							break;
+						}
+						else
+							flag = 1;
+					}			
+					if(flag == 1)
+					{
+						if(i!=1 || i!=0)				//Number should not be 0 or 1
+						{
+							System.out.print(i+" ");	//Print the prime numbers						
+							intArray[k] = i;		//scan the result into an integer array
+							checkIntPalindrome(i);
+							System.out.println(" ");	
+							k++;						//scan until the last element
+						}
+					}
+				}
+
+		}
+		
+		
+//*************************************************************************************************
+		
+		/**
+		 * @param m is lower value
+		 * @param n is higher value
+		 * @return This method check prime numbers within given range and 
+		 * 			pass those numbers to check anagrams.
+		 */
+		public static void primeNumberAnagram(int m, int n)
 		{
 			int flag = 0;
 			int  k=0,i;
@@ -444,21 +488,18 @@ public class Utility
 				{
 					if(i!=1 || i!=0)				//Number should not be 0 or 1
 					{
-						System.out.print(i+" ");	//Print the prime numbers
-						
-						intArray[k] = i;		//scan the result into an integer array
-						checkIntPalindrome(i);
-						System.out.println(" ");	
+						//System.out.print(i+" ");	//Print the prime numbers						
+						intArray[k] = i;		//scan the result into an integer array	
 						k++;						//scan until the last element
 					}
 				}
 			}
-			
-			System.out.println();
 			System.out.println("Anagrams are :");
 			checkAnagram(intArray, k);				//calling the anagram method
 
 		}
+		
+		
 		
 //********************************************************************************
 		
@@ -511,7 +552,7 @@ public class Utility
 				}
 					if(k == numberInReverse)
 					{
-						System.out.print("   is a Palindrome");
+						System.out.print("is a Palindrome");
 					}
 			}		
 				
@@ -549,29 +590,38 @@ public class Utility
 			 * @return This method is used to search a word from wordlist read from a file
 			 * 
 			 */
-			public static void searchString(String Strarr[], String searchstr)
+			public static int searchString(String Strarr[], String searchstr)
 			{
-				//Binary search on String array
-				int first=0, last=Strarr.length-1, mid = (first+last)/2;
-				while( first <= last )
-			    {
-			      if ( Strarr[mid].compareTo(searchstr)< 0 )
-			      {
-			        first = mid + 1;  		
-			      }
-			      else if ( Strarr[mid].compareTo(searchstr)==0)
-			      {
-			        System.out.println(searchstr + " found at location " + (mid+1) + ".");
-			        break;
-			      }
-			      else
-			      {
-			         last = mid - 1;
-			      }
-			      mid = (first + last)/2;
-			   }
-			   if (first > last)
-			      System.out.println(searchstr + " isn't present in the list.\n");
+					
+					int position = 0;
+					//Binary search on String array
+					int first=0, last=Strarr.length-1, mid = (first+last)/2;
+					
+					while( first <= last )
+				    {
+					      if ( Strarr[mid].compareTo(searchstr)< 0 )
+					      {
+					    	  first = mid + 1;  		
+					      }
+					      else if ( Strarr[mid].compareTo(searchstr)==0)
+					      {
+					    	  position = mid+1;
+					    	  //System.out.println(searchstr + " found at location " + (mid+1) + ".");
+					    	  
+					    	  break;
+					      }
+					      else
+					      {
+					    	  last = mid - 1;
+					      }
+					      mid = (first + last)/2;
+				   }
+				   if (first > last)
+				   {
+					   position = -1;
+				   }
+				      //System.out.println(searchstr + " isn't present in the list.\n");
+				   return position;
 				
 			}
 			
@@ -649,11 +699,6 @@ public class Utility
 			public static String[] insertSortSearch(String ar[],int k)
 			{
 				int i,j;
-//				System.out.println("Elements of String array are :");
-//				for(i=0;i<k;i++)
-//				{
-//					System.out.println(ar[i]);
-//				}
 				
 				//Insertion sort on string array
 				String temp="";
@@ -684,7 +729,7 @@ public class Utility
 			 * @param k is the size of an integer array
 			 * @return This method sorts the elements using Bubble Sort 
 			 */
-			public static void BubbleIntsort(int ar[],int k)
+			public static int[] bubbleIntSort(int ar[],int k)
 			{
 				int i,j;
 				for (i = 0; i < k-1; i++)
@@ -696,11 +741,7 @@ public class Utility
 		                    ar[j] = ar[j+1];
 		                    ar[j+1] = temp;
 		                }
-				System.out.println("Elements of Sorted Integer array are : ");
-				for(i=0;i<ar.length;i++)
-				{
-					System.out.println(ar[i]);
-				}
+				return ar;
 			}
 			
 			
@@ -858,7 +899,9 @@ public class Utility
 	  
 	    // Main function that sorts arr[l..r] using 
 	    // merge() 
-	  /**
+	
+	
+	 /**
 	 * @param arr is the string array to be sorted
 	 * @param l lowest index of an array
 	 * @param r highest index of an array
@@ -1704,7 +1747,7 @@ public class Utility
 		            	sum = sum - term;
 				}
 			}	
-			//System.out.println("Count:"+count);
+			
 			return sum;
 		}
 
@@ -1740,7 +1783,7 @@ public class Utility
 		 * @param str is a String 
 		 * @return This method returns the count of Occurences of a word in given String
 		 */
-		public static void countOccurences(String str)  
+		public static void freqCountOccurences(String str)  
 		{ 
 		    // split the string by spaces in array 
 		    String[] a = str.split(" "); 
@@ -1748,12 +1791,6 @@ public class Utility
 		    {
 		    	System.out.println(a[k]);
 		    }
-//		    Arrays.sort(a);
-//		    System.out.println("sorted array :");
-//		    for(int k=0;k<a.length;k++)
-//		    {
-//		    	System.out.println(a[k]);
-//		    }
 		    System.out.println();
 		    // search for pattern in a 
 		    int count = 1; 
@@ -1786,7 +1823,7 @@ public class Utility
 		 * @param endLine is the line number upto which line the file to read
 		 * @return This method returns the Patterns that matches the initials of Name given by user 
 		 */
-		public static void showLines(String fileName, int startLine, int endLine) 
+		public static void readPatternFromFile(String fileName, int startLine, int endLine) 
 		{
 			String line = null;
 			int currentLineNo = 1;
@@ -1874,13 +1911,14 @@ public class Utility
 		{
 			boolean flag = false;
 			Pattern pattern = Pattern.compile(name);
-			if (!pattern.matches("[a-zA-Z]*+",name)) 
+			if (Pattern.matches("[a-zA-Z]*+",name)) 
 			{
-				System.out.println("Invalid name");		   
+				flag = true;
 			}
 			else
-				flag = true;
-			
+			{
+				flag = false;
+			}
 			return flag;			
 		}
 
@@ -1892,9 +1930,18 @@ public class Utility
 		 */
 		public static boolean contactValidate(String contact)
 		{	
+			boolean flag = false;
 			 Pattern p = Pattern.compile("^(0/91)?[7-9][0-9]{9}$"); 
 		        Matcher m = p.matcher(contact); 
-		        return (m.find() && m.group().equals(contact)); 
+		       if( (m.find() && m.group().equals(contact)))
+		       {
+		    	   flag = true;
+		       }
+		       else
+		       {
+		    	   flag = false;
+		       }
+		        return flag;
 		}
 
 
@@ -1906,13 +1953,22 @@ public class Utility
 		 */
 		public static boolean emailValidate(String email)
 		{	
+			boolean flag = false;
 			 Pattern p = Pattern.compile("^[a-zA-Z0-9_+&*-]+(?:\\."+ 
                      "[a-zA-Z0-9_+&*-]+)*@" + 
                      "(?:[a-zA-Z0-9-]+\\.)+[a-z" + 
                      "A-Z]{2,7}$");
 					
 		        Matcher m = p.matcher(email); 
-		        return (m.find() && m.group().equals(email)); 
+		        if ((m.find() && m.group().equals(email)))
+			       {
+			    	   flag = true;
+			       }
+			       else
+			       {
+			    	   flag = false;
+			       }
+			        return flag;
 		}
 
 	//*****************************************************************************************
@@ -1923,9 +1979,18 @@ public class Utility
 		 */
 		public static boolean userIdValidate(String userId)
 		{	
+			boolean flag = false;
 			 Pattern p = Pattern.compile("[A-Za-z0-9_]+"); 
 		        Matcher m = p.matcher(userId); 
-		        return (m.find() && m.group().equals(userId)); 
+		        if( (m.find() && m.group().equals(userId)))
+		        {
+			    	   flag = true;
+			       }
+			       else
+			       {
+			    	   flag = false;
+			       }
+			        return flag;
 		}
 
 	//*****************************************************************************************
@@ -1936,9 +2001,18 @@ public class Utility
 		 */
 		public static boolean passwordValidate(String password)
 		{	
+			boolean flag = false;
 			 Pattern p = Pattern.compile("((?=.*\\d)(?=.*[A-Z])(?=.*[!^&*@#$%]).{8,20})+"); 
 		        Matcher m = p.matcher(password); 
-		        return (m.find() && m.group().equals(password)); 
+		        if( (m.find() && m.group().equals(password)))
+		        {
+			    	   flag = true;
+			       }
+			       else
+			       {
+			    	   flag = false;
+			       }
+			        return flag;
 		}
 
 	//*****************************************************************************************
@@ -2010,6 +2084,10 @@ public class Utility
 	//*****************************************************************************************
 
 	
+		/**
+		 * @param n is input number
+		 * @return This method is to check if input number is prime or not
+		 */
 		public static boolean isPrime(int n) 
 			{
 				int c = 0;
@@ -2024,7 +2102,37 @@ public class Utility
 					return false;
 			}
 
+		//*****************************************************************************************
 
+		public static void countNumberFrequency(int arr[])
+		{
+			int count = 1; 
+		
+			int[] sorted = Utility.bubbleIntSort(arr, arr.length);
+		    for (int i = 0; i < sorted.length; i++)  
+		    { 
+		    	for(int j=i+1;j<sorted.length;j++)
+		    	{
+				    // if match found then increase the count by 1 
+				    if (sorted[i]==(sorted[j])) 
+				    {
+				    	
+				        count=count+1; 
+				        sorted[j] = 0;
+				    } 
+				    else 
+				    	break;
+				  
+		    	}
+		    
+		    	if(sorted[i]!=0)
+		    	{
+		    		System.out.println(sorted[i]+"--"+count);	//Printing the number along with the count
+					count=1;
+		    	}
+		    }
+		   
+		}
 
 
 

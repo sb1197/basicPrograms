@@ -31,7 +31,7 @@ public class ISearchnSort {
 		{
 			ar[i] =Utility.inputString();
 		}
-		Utility.IsortSearch(ar, k);
+		Utility.insertSortSearch(ar, k);
 		
 		double stop=System.currentTimeMillis();		
 		 System.out.println("Stop time of the function : " + start);

@@ -37,9 +37,16 @@ public class Word
 		    System.out.println("Enter a word to search from input file :");
 		    String search = Utility.inputString();
 		    System.out.println("Input string to be search :"+search);
-		    Utility.searchString(tokens, search);
+		   int result = Utility.searchString(tokens, search);
+		    if(result < 0 )
+		    {
+		    	System.out.println(search + " isn't present in the list.\n");
+		    }
+		    else
+		    {
+		    	System.out.println(search + " found at location " + result + ".");
+		    }
 		    
-		    
-		    //return result to main()
+		   
 	}
 }

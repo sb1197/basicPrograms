@@ -17,7 +17,7 @@ public class HarmonicNumber {
 		int n = Integer.parseInt(args[0]);
 		System.out.println("Input Value is :"+n);		
 		double result = Utility.harmonicNumber(n);
-		System.out.println(result);		//Print the harmonic value
+		System.out.println("Harmonic value of input number is: "+result);		//Print the harmonic value
 	}
 
 }

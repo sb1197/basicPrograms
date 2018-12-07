@@ -33,9 +33,13 @@ public class BubbleIntsort {
 				 tokens[i] = numbers.get(i);
 	      }
 
-	     Utility.BubbleIntsort(tokens, n);
+	   int result[] =  Utility.bubbleIntSort(tokens, n);
 	    
-			
+	     System.out.println("Elements of Sorted Integer array are : ");
+			for(int i=0;i<tokens.length;i++)
+			{
+				System.out.println(result[i]);
+			}
 	}
 
 }

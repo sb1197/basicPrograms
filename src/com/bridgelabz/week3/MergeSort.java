@@ -17,21 +17,23 @@ public class MergeSort
 		// TODO Auto-generated method stub
 	
 		System.out.println("Enter size of arraylist:");
-		 int n = Utility.inputNumber();
-		 ArrayList<String> strings = new ArrayList<String>();
-		 System.out.println("Please enter a list of Strings: ");
+		int n = Utility.inputNumber();
+		 
+		ArrayList<String> strings = new ArrayList<String>();
+		System.out.println("Please enter a list of Strings: ");
 		for(int j=0;j<=n;j++)
-	      {
+	     {
 	         String input = Utility.inputString();
 	         strings.add(input);
-	      }
+	     }
 		 System.out.println("Input arraylist is :");
 	     String tokens[] = new String[strings.size()];
 	     
-	     for (int i = 0; i < strings.size(); i++) {
+	     for (int i = 0; i < strings.size(); i++)
+	     {
 				System.out.println(strings.get(i));
 				tokens[i]=strings.get(i);
-			}
+	     }
 //	      System.out.println("Converted array is :");
 //	      for (int i = 0; i < strings.size();i++) 
 //	      {

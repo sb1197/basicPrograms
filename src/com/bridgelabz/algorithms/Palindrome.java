@@ -8,7 +8,7 @@ public class Palindrome {
 		
 		int m = 0, n = 1000;
 		System.out.println("Prime numbers are :");
-		Utility.primeNumber(m, n);
+		Utility.primeNumberPalindrome(m, n);
 		
 	}
 }

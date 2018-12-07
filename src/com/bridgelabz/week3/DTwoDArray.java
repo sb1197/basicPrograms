@@ -1,5 +1,5 @@
 /**
- * Purpose  : This program is to do four different math operations.
+ * Purpose  : This program is to print following 2D Array.
  *  			1) To print 2D Integer Array
 				2) To print 2D Double Array
 				3) To print 2D Boolean Array
@@ -40,7 +40,8 @@ public class DTwoDArray
 								arr[i][j] = Utility.inputNumber();
 							}
 					 }
-					Utility.integerArray(arr,0,arr.length);
+					 Utility.integerArray(arr,0,arr.length);
+					
 					break;
 				
 				case 2:

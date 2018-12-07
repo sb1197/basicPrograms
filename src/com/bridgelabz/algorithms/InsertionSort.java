@@ -24,6 +24,6 @@ public class InsertionSort {
 		{
 			System.out.println(tokens[i]);
 		}
-		Utility.IsortSearch(tokens, k);
+		Utility.insertSortSearch(tokens, k);
 	}
 }

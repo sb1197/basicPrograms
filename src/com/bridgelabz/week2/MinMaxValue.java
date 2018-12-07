@@ -36,6 +36,8 @@ public class MinMaxValue {
 		
 		int minValue = MathFunction.getMinValue(arrInteger);
 		System.out.println("Minimum Value :"+minValue);
+	
+	
 	}
 
 }

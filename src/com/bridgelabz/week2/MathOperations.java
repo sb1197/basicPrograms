@@ -78,47 +78,6 @@ public class MathOperations {
 			System.out.println("Do you want to continue (0=Exit/1=Continue):");
 			cont = Utility.inputNumber();
 		}while(cont==1);
-	
-	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 		
 	}

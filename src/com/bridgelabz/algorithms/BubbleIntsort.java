@@ -37,7 +37,7 @@ public class BubbleIntsort {
 //	      {
 //	    	  System.out.println(tokens[j]);
 //	      }
-	     Utility.BubbleIntsort(tokens, n);
+	     Utility.bubbleIntSort(tokens, n);
 	    
 			
 	}

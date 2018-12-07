@@ -1,6 +1,7 @@
 package com.bridgelabz.week3;
 
-public class Prime2DArray {
+public class Prime2DArray 
+{
 	public static void main(String[] args)
 	{
 		// TODO Auto-generated method stub
@@ -28,12 +29,6 @@ public class Prime2DArray {
 					k++;
 				}
 			}
-//			System.out.println("\nK"+k);
-//			System.out.println("\nArray is");
-//			for(int m=0;m<k;m++)
-//			{
-//				System.out.println(intArray[m]);
-//			}
 			
 			int a[][]=new int[10][30];
 			int b[][]=new int[10][30];
@@ -64,36 +59,13 @@ public class Prime2DArray {
 	        	  
 	        	   if(a[i][j]>pause)
 	                 {
-	        		   //System.out.print(a[i][j]+" ");
-	        		//   System.out.println("Pause :"+pause);
 	                     pause=pause+100;
 	                     System.out.println();
 	                 }	
 	        	   System.out.print(a[i][j]+" ");
 	            }
 	        }
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
+								
 					
 
 	}

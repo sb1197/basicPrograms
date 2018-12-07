@@ -56,7 +56,7 @@ public class BSearchnSort {
 			System.out.print(Strarr[i]+" ");
 		}
 		System.out.println();
-		Utility.BsearchString(Strarr, searchstr);
+		Utility.searchString(Strarr, searchstr);
 		
 		double stop=System.currentTimeMillis();
 		 System.out.println("Stop time of the function : " + stop);

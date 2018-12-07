@@ -1,7 +1,5 @@
 package com.bridgelabz.week3;
-
 import utility.Utility;
-
 public class UserRegistration 
 {
 
@@ -9,104 +7,84 @@ public class UserRegistration
 	{
 		// TODO Auto-generated method stub
 		
-		//**********READ FIRST NAME OF USER***********//
+		boolean flag, flag1, flag2, flag3, flag4, flag5;
+		String fName,lName,email,contact,company,userId,password;
 		
-		System.out.println("Enter your First name : ");
-		String fName = Utility.inputString(); 
-		boolean flag = Utility.nameValidate(fName);
-//		if(flag==true)
-//		{
-//			System.out.println("First Name :"+fName);
-//		}
+		do 
+		{
+			//**********READ FIRST NAME OF USER***********//
+			
+			System.out.println("Enter your First name : ");
+			 fName = Utility.inputStr(); 
+			 flag = Utility.nameValidate(fName);
+			
+			//**********READ LAST NAME OF USER***********//
+			
+			System.out.println("Enter your Last name : ");
+			 lName = Utility.inputStr();
+			 flag1 = Utility.nameValidate(lName);
+			
+			//**********READ EMAIL ID OF USER***********//
+			
+			System.out.println("Enter your Email address :");
+			 email = Utility.inputStr();
+			 flag2 = Utility.emailValidate(email);
+			
+			//**********READ CONTACT OF USER***********//
 		
-		//**********READ LAST NAME OF USER***********//
+			System.out.println("Enter your contact : ");
+			 contact = Utility.inputStr();
+			 flag3 = Utility.contactValidate(contact);
+		 		
+			//**********READ COMPANY NAME OF USER***********//
+			
+			System.out.println("Enter Company name :");
+			 company = Utility.inputStr();
+			
 		
-		System.out.println("Enter your Last name : ");
-		String lName = Utility.inputString();
-		boolean flag1 = Utility.nameValidate(lName);
-//		if(flag1==true)
-//		{
-//			System.out.println("Last Name :"+lName);
-//		}
+			//**********READ USER ID OF USER***********//
+			
+			System.out.println("Enter UserId :");
+			userId = Utility.inputStr();
+			 flag4 = Utility.userIdValidate(userId);
 		
-		//**********READ EMAIL ID OF USER***********//
+			//**********READ PASSWORD OF USER***********//
+			
+			System.out.println("Enter Password :");
+			 password = Utility.inputStr();
+			 flag5 = Utility.passwordValidate(password);
+					
+					
+			if(!flag || !flag1 || !flag2 || !flag3 || !flag4 || !flag5)	
+			{
+				System.out.println("Please enter valid details...");
+			}
+					
+		}while(!flag || !flag1 || !flag2 || !flag3 || !flag4 || !flag5);
 		
-		System.out.println("Enter your Email address :");
-		String email = Utility.inputString();
-//		if (Utility.emailValidate(email))  
-//		{ 
-//            System.out.println("Email Id :" +email);
-//		}
-//        else
-//        {
-//            System.out.println("Invalid Email Address");  
-//        }	
 		
-		//**********READ CONTACT OF USER***********//
-	
-		System.out.println("Enter your contact : ");
-		String contact = Utility.inputString();
-	 
-//		if (Utility.contactValidate(contact))  
-//		{
-////            System.out.println("Valid Number");  
-//			System.out.println("Contact is :"+contact);
-//		}
-//        else
-//        {
-//            System.out.println("Invalid Number");  
-//        }	
-//		
-		//**********READ COMPANY NAME OF USER***********//
-		
-		System.out.println("Enter Company name :");
-		String company = Utility.inputStr();
-//		System.out.println("Company Name :"+company);
-	
-		//**********READ USER ID OF USER***********//
-		
-		System.out.println("Enter UserId :");
-		String userId = Utility.inputStr();
-		
-//		if(Utility.userIdValidate(userId))
-//		{
-////			System.out.println("Valid User Id");  
-//			System.out.println("User Id is :"+userId);
-//		}
-//        else
-//        {
-//            System.out.println("Invalid User Id");  
-//        }	
-	
-		//**********READ PASSWORD OF USER***********//
-		
-		System.out.println("Enter Password :");
-		String password = Utility.inputStr();
-	
-//		if(Utility.passwordValidate(password))
-//		{
-////			System.out.println("Valid Password");  
-//			System.out.println("Password is :"+password);
-//		}
-//        else
-//        {
-//            System.out.println("Invalid Password");  
-//        }	
-//	
 	//**************************************************************
-		if(flag==true)
+		if(flag)
 		{
 			System.out.println("First Name :"+fName);
 		}
+		else
+        {
+            System.out.println("Invalid First Name");  
+        }
 		
 	//**************************************************************
-		if(flag1==true)
+		if(flag1)
 		{
 			System.out.println("Last Name :"+lName);
 		}
+		else
+        {
+            System.out.println("Invalid Last Name");  
+        }
 		
 	//**************************************************************
-		if (Utility.emailValidate(email))  
+		if (flag2)  
 		{ 
             System.out.println("Email Id :" +email);
 		}
@@ -116,14 +94,13 @@ public class UserRegistration
         }	
 		
 	//**************************************************************
-		if (Utility.contactValidate(contact))  
-		{
-//            System.out.println("Valid Number");  
+		if (flag3)  
+		{ 
 			System.out.println("Contact is :"+contact);
 		}
         else
         {
-            System.out.println("Invalid Number");  
+            System.out.println("Invalid Contact Number");  
         }	
 		
 	//**************************************************************	
@@ -135,9 +112,8 @@ public class UserRegistration
 			System.out.println("Company Name :"+company);
 		
 	//**************************************************************
-		if(Utility.userIdValidate(userId))
+		if(flag4)
 		{
-//			System.out.println("Valid User Id");  
 			System.out.println("User Id is :"+userId);
 		}
         else
@@ -147,9 +123,8 @@ public class UserRegistration
 	
 		
 	//**************************************************************	
-		if(Utility.passwordValidate(password))
-		{
-//			System.out.println("Valid Password");  
+		if(flag5)
+		{ 
 			System.out.println("Password is :"+password);
 		}
         else
