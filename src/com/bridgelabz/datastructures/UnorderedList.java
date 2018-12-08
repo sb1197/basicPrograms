@@ -14,7 +14,7 @@ public class UnorderedList
 	public static void main(String[] args) throws IOException
 	{
 		// TODO Auto-generated method stub
-		File file=new File("/home/bridgeit/Desktop/sample.txt");	// to open the file	
+		File file=new File("/home/bridgeit/eclipse-workspace/JavaPrograms/src/com/bridgelabz/datastructures/sample.txt");	// to open the file	
 			
 		br = new BufferedReader(new InputStreamReader(new FileInputStream(file)));		
 		String line = " ";

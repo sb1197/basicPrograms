@@ -185,7 +185,7 @@ public class MyLinkedList<T> {
 
 	//*************************************************************************************************
 
-	public void addInt(int numbers[])
+	public void addInt(int array)
 	{
 		
 	}

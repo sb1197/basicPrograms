@@ -6,13 +6,13 @@
  * @since   : 18/11/18
  */
 
-
-package com.bridgelabz.functional;
+package com.bridgelabz.week3;
 import utility.Utility;
 
-public class GamblingSimulator {
-
-	public static void main(String[] args) {
+public class GamblingSimulator 
+{
+	public static void main(String[] args) 
+	{
 		// TODO Auto-generated method stub
 		
 		int stake, goal, trials;		
@@ -28,16 +28,18 @@ public class GamblingSimulator {
 //	       int goal   = Integer.parseInt(args[1]);    
 //	       int trials = Integer.parseInt(args[2]); 
 		
-		//Utility.gambler(stake,goal,trials);
+		String output[][] = Utility.gambler2DArray(stake,goal,trials);
+
+        for(int i=0;i<2;i++)
+        {
+        	for(int j=0;j<2;j++)
+        	{
+        		System.out.print(output[i][j]+"  ");
+        	}
+        	System.out.println();
+        }
+        
     }
 
 }
 
-//check logic
-
-//
-//% java Gambler 50 100 1000
-//*  503 wins of 1000
-//*  Percent of games won = 50.3
-//*  Avg # bets           = 2464.59
-//*

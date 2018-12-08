@@ -12,10 +12,16 @@ public class RepeatedNumber
 	public static void main(String[] args)
 	{
 		// TODO Auto-generated method stub
-		int array[] = {13,13,25,45,88};
-		int n = array.length;
-		Utility.printRepeating(array, n);
+		
+		System.out.println("Enter the size of array :");
+		int size = Utility.inputNumber();
+		int array[] = new int[size];
+		System.out.println("Enter the elements of array:");
+		for(int i = 0; i<size; i++)
+		{
+			array[i] = Utility.inputNumber();
+		}
+		
+		Utility.printRepeating(array, size);
 	}
-
 }
-//take user input

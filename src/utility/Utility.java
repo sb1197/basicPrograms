@@ -116,33 +116,47 @@ public class Utility
 		 * @param trials is number of times user wants to play the game
 		 * @return This method returns the average number of wins, number of bets, and percentage of game won
 		 */
-		public static void gambler(int stake, int goal, int trials)
+		public static String[][] gambler2DArray(int stake, int goal, int trials)
 		{
-			int bets = 0;        // total number of bets 
-	        int wins = 0;        // total number of games won
-
-	        // repeat trials times
-	        for (int t = 0; t < trials; t++) 
-	        {
-
-	            int cash = stake;
-	            while (cash > 0 && cash < goal) 	//To ensure money remaining for playing 
-	            {
-	                bets++;
-	                if (Math.random() < 0.5) 
-	                	cash++;     // win 
-	                else                     
-	                	cash--;     // lose 
-	            }
-	            if (cash == goal) 
-	            	wins++;                
-	        }
-
-	        // print results
-	        System.out.println(wins + " wins of " + trials);
-	        System.out.println("Percent of games won = " + 100.0 * wins / trials);
-	        System.out.println("No of bets : "+bets);
-	        System.out.println("Average bets           = " + 1.0 * bets / trials);
+				int bets = 0;        // total number of bets 
+		        int wins = 0;        // total number of games won
+		        String result[][] = new String[2][2];
+		        // repeat trials times
+		        for (int t = 0; t < trials; t++) 
+		        {
+	
+		            int cash = stake;
+		            while (cash > 0 && cash < goal) 	//To ensure money remaining for playing 
+		            {
+		                bets++;
+		                if (Math.random() < 0.5) 
+		                {
+		                	cash++; // win 	
+		                }
+		                else 
+		                {
+		                	cash--; 
+		                } 
+		            }
+		            if (cash == goal) 
+		            	wins++;  
+		        }
+	
+		        // print results
+		        System.out.println("No of bets : "+bets);
+		        System.out.println(wins + " wins of " + trials);
+		        int loss = trials - wins;
+		        System.out.println(loss + " loss of " + trials);
+			
+		        result[0][0] = "Wins";
+		        result[0][1] = "Loss";
+		        result[1][0] = Integer.toString(wins);
+		        result[1][1] = Integer.toString(loss);
+		
+		        return result;
+		
+		
+		
 		}	
 		
 		
@@ -2133,6 +2147,43 @@ public class Utility
 		    }
 		   
 		}
+
+		//*****************************************************************************************
+
+		  /**
+		 * @param arr are the elements of integer array
+		 * @param size is the size of array
+		 * @return This method return the repeated elements in an array
+		 */
+		public static int[] printRepeatedArrayElement(int arr[], int size)  
+		{ 
+		        int i, j,count=0; 
+		        int result[] = new int[size];
+		        System.out.println("Repeated Elements are :"); 
+		        for (i = 0; i < size; i++)  
+		        { 
+		            for (j = i + 1; j < size; j++)  
+		            { 
+		                if (arr[i] == arr[j])  
+		                    //System.out.print(arr[i] + " "); 
+		                result[i] = arr[i];
+		                count++;
+		            } 
+		        } 
+		        return result;
+		  } 
+
+		//*****************************************************************************************
+
+
+
+
+
+
+
+
+
+
 
 
 
