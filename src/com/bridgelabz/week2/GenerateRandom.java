@@ -2,6 +2,8 @@ package com.bridgelabz.week2;
 
 import java.util.Random;
 
+import utility.Utility;
+
 public class GenerateRandom {
 	
 	static int[] uniqueNumber(int from, int to)
@@ -11,6 +13,7 @@ public class GenerateRandom {
 		for(int i=0;i<n;i++)
 		{
 			a[i] = i;
+			System.out.println("array" +a[i]);
 		}
 		int result[] =  new int[n];
 		int x = n;
@@ -28,12 +31,15 @@ public class GenerateRandom {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
-		int[] result = uniqueNumber(4,25);
+		
+		int[] result = uniqueNumber(2,10);
 		for(int i=0;i<result.length;i++)
 		{
 			System.out.println(result[i]);
+			
 		}
+		int num = Utility.checkRepeated(result, result.length);
+		System.out.println("Repeat count: "+num);
 	}
 
 }
