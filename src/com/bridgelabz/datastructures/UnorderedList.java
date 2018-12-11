@@ -1,4 +1,4 @@
-package com.bridgelabz.datastructures;
+ package com.bridgelabz.datastructures;
 import java.util.Scanner;
 
 import utility.Utility;
@@ -40,42 +40,55 @@ public class UnorderedList
 		  
 		 list.display();						//Print the elements of LinkedList
 		 
-		 System.out.println("The size of the linked list is: "+ list.size()); 
+		// System.out.println("The size of the linked list is: "+ list.size()); 
 		 
-		 System.out.println("The Natasha is at index:"+ list.indexOf("Natasha"));
-		 
+		// System.out.println("The Natasha is at index:"+ list.indexOf("Natasha"));
+		// String toFile[] = {};
 		 System.out.println("Enter a word to search from input file :");
 		    String search = Utility.inputString();
 		    System.out.println("Input string to be search :"+search);
 		    if(list.search(list.head,search))
 		    {
-		    	System.out.println("Element found..");
+		    	int index = list.indexOf(search);
+		    	list.Delete(list.head,index);
+		    	list.display();
+		    	//System.out.println("Element found..");
 		    }
 		    else
 		    {	
-				System.out.println("Element not found..");
+				//System.out.println("Element not found..");
 				list.add(search);
 				list.display();
-		    }
 				
-		    System.out.println("Enter a word to delete from input file :");
-		   int position = Utility.inputNumber();
-		    	list.Delete(list.head,position);
-		    list.display();
+				
+			
+				System.out.println("Array write to file:");
+				
+				String[] strArr = new String[list.size()];
+		       
+				
+		    }
+			
 		    
-		  System.out.println("Enter the loaction where you want to add the node:");
-		  int location = Utility.inputNumber();
-		  System.out.println("Enter the data to be inserted at above position :");
-		  String newStr = sc.nextLine();
-		  list.insert(newStr, location);
-		   
-		  list.display();
-
-		  System.out.println("Deleting element from last of Linked List...");
-		  list.deleteLast();
-	
-		  System.out.println("Updated List after delete..");
-		  list.display();
+			
+//		    System.out.println("Enter a positon of a number to delete from input file :");
+//		   int position = Utility.inputNumber();
+//		    	list.Delete(list.head,position);
+//		    list.display();
+//		    
+//		  System.out.println("Enter the loaction where you want to add the node:");
+//		  int location = Utility.inputNumber();
+//		  System.out.println("Enter the data to be inserted at above position :");
+//		  String newStr = sc.nextLine();
+//		  list.insert(newStr, location);
+//		   
+//		  list.display();
+//
+//		  System.out.println("Deleting element from last of Linked List...");
+//		  list.deleteLast();
+//	
+//		  System.out.println("Updated List after delete..");
+//		  list.display();
 	
 	
 	

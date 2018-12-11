@@ -13,108 +13,39 @@ public class OrderedLinkedList<T>
 	        ptr = null;
 	        size = 0;
 	    }
+	    
 	    /*  Function to check if list is empty  */
 	    public boolean isEmpty()
 	    {
 	        return head == null;
 	    }
+	    
 	    /*  Function to get size of list  */
 	    public int getSize()
 	    {
 	        return size;
 	    }    
-	    /*  Function to insert an element at begining  */
-//	    public void insertAthead(int val)
-//	    {
-//	        Node1 nptr = new Node1(val, null);    
-//	        size++ ;    
-//	        if(head == null) 
-//	        {
-//	            head = nptr;
-//	            end = head;
-//	        }
-//	        else 
-//	        {
-//	            nptr.setLink(head);
-//	            head = nptr;
-//	        }
-//	    }
+	    
 	    /*  Function to insert an element at end  */
-	    public <T> void addInt(T val)
+	    public void addInt(T val)
 	    {
-	    	int data = (Integer) null;
+	    	int data;
 	    	Node1<T> next = null; 
-	        Node1<T> n = new Node1<T>(val,null);
+	        Node1<T> n = new Node1<T>(val,next);
 	        T number = val;
 	        size++ ;    
-	        if(head == null) 
-	        {
-	            head.data = n;
-	            n.next = n;
-	        }
-	        else 
-	        {
-	            ptr.next = n;
-	            n.next = null;
-	        }
+	        if(head ==null)
+			{
+				head = n;
+				ptr = n;
+			}
+			else
+			{
+				ptr.next = n;
+				ptr = n;
+			}
 	    }
-//	    /*  Function to insert an element at position  */
-//	    public void insertAtPos(int val , int pos)
-//	    {
-//	        Node1 nptr = new Node1(val, null);                
-//	        Node1 ptr = head;
-//	        pos = pos - 1 ;
-//	        for (int i = 1; i < size; i++) 
-//	        {
-//	            if (i == pos) 
-//	            {
-//	                Node1 tmp = ptr.getLink() ;
-//	                ptr.setLink(nptr);
-//	                nptr.setLink(tmp);
-//	                break;
-//	            }
-//	            ptr = ptr.getLink();
-//	        }
-//	        size++ ;
-//	    }
-//	    /*  Function to delete an element at position  */
-//	    public void deleteAtPos(int pos)
-//	    {        
-//	        if (pos == 1) 
-//	        {
-//	            head = head.getLink();
-//	            size--; 
-//	            return ;
-//	        }
-//	        if (pos == size) 
-//	        {
-//	            Node1 s = head;
-//	            Node1 t = head;
-//	            while (s != end)
-//	            {
-//	                t = s;
-//	                s = s.getLink();
-//	            }
-//	            end = t;
-//	            end.setLink(null);
-//	            size --;
-//	            return;
-//	        }
-//	        Node1 ptr = head;
-//	        pos = pos - 1 ;
-//	        for (int i = 1; i < size - 1; i++) 
-//	        {
-//	            if (i == pos) 
-//	            {
-//	                Node1 tmp = ptr.getLink();
-//	                tmp = tmp.getLink();
-//	                ptr.setLink(tmp);
-//	                break;
-//	            }
-//	            ptr = ptr.getLink();
-//	        }
-//	        size-- ;
-//	    }    
+
 	    /*  Function to display elements  */
 	    public void display()
 	    {
@@ -139,34 +70,65 @@ public class OrderedLinkedList<T>
 	        }
 	        System.out.print(ptr.data+ "\n");
 	    }
-	    
-	    
-		public int search(Node1<T> head,int number)
-		{	
-			Node1<T> ptr = head;
-			int index = 0;
-				if((ptr.data).equals(number))
-				{
-					index++;
-					return index;	
-				}
-				else
-				{
-					index++;
-					ptr.next = ptr.next.next;
-				}
+	
+	    /*  Function to search given element  */
+		public int search(Node1<T> head, int x) 
+	    { 
+			int position = 0;
+	        Node1<T> current = head;    //Initialize current 
+	        while (current != null) 
+	        { 
+	        	position++;
+	            if (current.data.equals(x)) 
+	                return position;    //data found 
+	            current = current.next; 
+	        } 
+	        return position;    //data not found 
+	    } 
+	
+		  /*  Function to delete an element from given position */
+		public Object Delete(Node1<T> head, int position) 
+		{
 			
-			return index;
-			
+		    if (head == null)
+		    {
+		        return null;
+		    } 
+		    else if (position == 0) 
+		    {
+		        return head.next;
+		    } 
+		    else 
+		    {
+		        Node1<T> n = head;
+		        for (int i = 1; i < position - 1; i++)
+		        {
+		            n = n.next;
+		        }
+		        n.next = n.next.next;
+		        return head;
+		    }
+		}
+	
+		/*  Function to delete last element from list */
+		public void pop()
+		{
+			 Node1<T> start = head;
+		        Node1<T> prev = null;
+
+		        if(start == null || start.next == null)
+		        {
+		            head = null;
+		            return;
+		        }
+		        while (start.next != null)
+		        {
+		            prev = start;
+		            start = start.next;
+		        }
+		        prev.next = null;
 		}
 
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	

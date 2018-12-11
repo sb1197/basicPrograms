@@ -2175,7 +2175,34 @@ public class Utility
 
 		//*****************************************************************************************
 
-
+		public static int binarySearchInt(int n, int arr[], int search)
+		{
+				int flag = 0;
+				//Binary search on Integer array
+				int first=0, last=n-1, mid = (first+last)/2;
+				while( first <= last )
+			    {
+				      if ( arr[mid] < search )
+				        first = mid + 1;    
+				      else if ( arr[mid] == search )
+				      {
+				        System.out.println(search + " found at location " + (mid+ 1) + ".");
+				    	  flag = 1;
+				    	  break;
+				      }
+				      else
+				         last = mid - 1;
+				 
+				      mid = (first + last)/2;
+			   }
+			   if (first > last)
+			   {
+				   flag = 0;
+			      System.out.println(search + " isn't present in the list.\n");
+			   }
+			   return flag;
+			
+		}
 
 
 

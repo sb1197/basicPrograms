@@ -5,7 +5,7 @@ import utility.Utility;
 
 public class Demo 
 {
-	static int totalNo = 5;
+	static int totalNo = 7;
 	static int outputArray[] = new int[totalNo];
 		public static void main(String[] args)
 		{
@@ -64,7 +64,19 @@ public class Demo
 			        {
 			            if(A[i] == n)
 			            {
-			                return true;
+			              //  return true;
+			            	int sortedArray[] = Utility.bubbleIntSort(A, A.length);
+			            	int positionValue = Utility.binarySearchInt(sortedArray.length, sortedArray, n);
+			            	 Random rd = new Random();
+			            	 int newRandom;
+			            	if(positionValue==1)
+			            	{
+			            		newRandom = rd.nextInt(n+1);
+			            		check(sortedArray,newRandom);
+			            	}
+			            	else
+			            		newRandom = rd.nextInt(n-1);
+			            		check(sortedArray,newRandom);
 			            }
 			        }
 			        return false;
