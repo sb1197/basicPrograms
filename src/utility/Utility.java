@@ -1,6 +1,9 @@
 package utility;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
 import java.util.regex.Matcher;
@@ -2204,7 +2207,26 @@ public class Utility
 			
 		}
 
+		//*****************************************************************************************
 
+		public static void writeAllToFile(String fileName, String content)
+		{
+			try
+			{
+				FileWriter filewriter=new FileWriter(fileName);
+				BufferedWriter bufferedwriter=new BufferedWriter(filewriter);
+				bufferedwriter.write(content);
+				bufferedwriter.close();
+			}
+			catch(FileNotFoundException fileNotFoundException)
+			{
+				System.out.println("your file is not found in the location '"+fileName+"'");
+			}
+			catch(IOException ioException)
+			{
+				System.out.println("Error in reading your file '"+fileName+"'");
+			}
+		}
 
 
 

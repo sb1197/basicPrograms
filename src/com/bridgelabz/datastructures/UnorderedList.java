@@ -58,14 +58,21 @@ public class UnorderedList
 		    {	
 				//System.out.println("Element not found..");
 				list.add(search);
-				list.display();
+				//list.display();
 				
 				
-			
+				String temporary="";
 				System.out.println("Array write to file:");
 				
 				String[] strArr = new String[list.size()];
 		       
+				//write a file to specfied path and store the number in the list
+				Utility.writeAllToFile("/home/bridgeit/Documents/WriteTo/unordered.txt", temporary);
+//				String readedFile2=Utility.readAllFromFile("/home/adminstrato/Desktop/demohashing");
+//				System.out.println(readedFile2);
+				
+				
+				
 				
 		    }
 			
