@@ -2232,7 +2232,31 @@ public class Utility
 
 
 
+		public static String readAllFromFile(String fileName)
+		{
+			String line=null;
+			String readedFile="";
+			try 
+			{
+				FileReader filereader=new FileReader(fileName);
+				BufferedReader bufferedReader=new BufferedReader(filereader);
+				while((line=bufferedReader.readLine())!= null)
+				{
+					readedFile+=line;
+				}
+				bufferedReader.close();
+			}
+			catch(FileNotFoundException fileNotFoundException)
+			{
+				System.out.println("your file is not found in the location '"+fileName+"'");
+			}
+			catch(IOException ioException)
+			{
+				System.out.println("Error in reading your file '"+fileName+"'");
+			}
+			return readedFile;
 
+		}
 
 
 

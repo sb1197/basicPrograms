@@ -1,4 +1,5 @@
  package com.bridgelabz.datastructures;
+import java.util.Arrays;
 import java.util.Scanner;
 
 import utility.Utility;
@@ -58,18 +59,25 @@ public class UnorderedList
 		    {	
 				//System.out.println("Element not found..");
 				list.add(search);
-				//list.display();
+				list.display();
 				
 				
 				String temporary="";
-				System.out.println("Array write to file:");
 				
-				String[] strArr = new String[list.size()];
-		       
+					for(int j=0;j<list.size();j++)
+					{
+						temporary+=list.get(j)+",";
+						//System.out.print(list.get(j)+" ");
+					}
+					
+					//System.out.println("\nString is :\t"+temporary);
+					
+					
+					
 				//write a file to specfied path and store the number in the list
-				Utility.writeAllToFile("/home/bridgeit/Documents/WriteTo/unordered.txt", temporary);
-//				String readedFile2=Utility.readAllFromFile("/home/adminstrato/Desktop/demohashing");
-//				System.out.println(readedFile2);
+				Utility.writeAllToFile("/home/bridgeit/Output/UnorderedList", temporary);
+				String readedFile2=Utility.readAllFromFile("/home/bridgeit/Output/UnorderedList");
+				System.out.println("ReadFile :"+readedFile2);
 				
 				
 				

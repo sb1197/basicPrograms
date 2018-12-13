@@ -6,9 +6,12 @@ public class Parantheses {
 		// TODO Auto-generated method stub
 
 		System.out.println("Arithmetic expression : ");
-        String expression = "))))";
+        String expression = "(())))";
         System.out.println(expression);
-        Stack stack = new Stack(expression);    
+        MyLinkedList<String> list = new MyLinkedList<String>();
+        char abcd[] = expression.toCharArray();
+        Stack stack = new Stack(abcd.length);
+        int m = 0,n = 0;
         //utility.inputString();
         for(int i=0 ; i<expression.length();i++)
         {
@@ -16,20 +19,21 @@ public class Parantheses {
         
             if(ch == '(')
             {
-                stack.push(expression);
+                m = stack.push(abcd);
             }
             if(ch == ')')
             {
-                stack.pop();
+                 n = stack.pop(abcd);
             }
         }
-        if(stack.isEmpty())
+        if(stack.isEmpty() || m==n)
         {
             System.out.println("Expression is balanced ");
         }
         else
+        {
             System.out.println("Not balanced ");
-		
+        }
 		
 		
 		

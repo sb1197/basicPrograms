@@ -1,4 +1,4 @@
-package com.bridgelabz.datastructures;
+package com.calculaterandom;
 
 import java.util.ArrayList;
 

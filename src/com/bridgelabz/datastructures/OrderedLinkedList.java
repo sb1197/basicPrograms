@@ -72,18 +72,18 @@ public class OrderedLinkedList<T>
 	    }
 	
 	    /*  Function to search given element  */
-		public int search(Node1<T> head, int x) 
+		public boolean search(Node1<T> head, int x) 
 	    { 
-			int position = 0;
+			
 	        Node1<T> current = head;    //Initialize current 
 	        while (current != null) 
 	        { 
-	        	position++;
+	        	
 	            if (current.data.equals(x)) 
-	                return position;    //data found 
+	                return true;    //data found 
 	            current = current.next; 
 	        } 
-	        return position;    //data not found 
+	        return false;    //data not found 
 	    } 
 	
 		  /*  Function to delete an element from given position */
@@ -101,7 +101,7 @@ public class OrderedLinkedList<T>
 		    else 
 		    {
 		        Node1<T> n = head;
-		        for (int i = 1; i < position - 1; i++)
+		        for (int i = 0; i < position - 1; i++)
 		        {
 		            n = n.next;
 		        }
@@ -130,6 +130,46 @@ public class OrderedLinkedList<T>
 		}
 
 	
+		public int indexOf(T num)
+		{
+		     int size = 1;
+		    Node1<T> current = head.next;
+		    while (current != null) {
+		        if (current.data.equals(num)) {
+		            return size;
+		        }
+		        size++;
+		        current = current.next;
+		    }
+		        return size;
+		    
+		}
 	
+		public int size() 
+		{
+			 Node1<T> n = head;
+			 int count=0;
+			 while(n!=null)
+			 {
+				 count++;
+				 n = n.next;
+			 }
+			 return count;
+		}
+		
+		
+		public T get(int index)
+		{
+			if(index>=size())
+			{
+				throw new IndexOutOfBoundsException();
+			}
+			Node1<T> temp=head;
+			for(int i=0;i<index;i++)
+			{
+				temp=temp.next;
+			}
+			return temp.data;
+		}
 	
 }

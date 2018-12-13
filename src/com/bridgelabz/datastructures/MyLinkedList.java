@@ -5,7 +5,7 @@ public class MyLinkedList<T> {
 	Node<T> head;
 	Node<T> ptr;
 	
-	void add(String names)
+	void add(T names)
 	{
 		String data = null;
 		Node<T> next = null;
@@ -185,7 +185,19 @@ public class MyLinkedList<T> {
 
 	//*************************************************************************************************
 
-	
+	public T get(int index)
+	{
+		if(index>=size())
+		{
+			throw new IndexOutOfBoundsException();
+		}
+		Node<T> temp=head;
+		for(int i=0;i<index;i++)
+		{
+			temp=temp.next;
+		}
+		return temp.data;
+	}
 
 
 
