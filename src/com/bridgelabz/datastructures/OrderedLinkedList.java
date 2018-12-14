@@ -2,8 +2,8 @@ package com.bridgelabz.datastructures;
 
 public class OrderedLinkedList<T>
 {
-		 Node1<T> head;
-	    Node1<T> ptr ;
+		 Node<T> head;
+	    Node<T> ptr ;
 	    int size ;
 	 
 	    /*  Constructor  */
@@ -30,8 +30,8 @@ public class OrderedLinkedList<T>
 	    public void addInt(T val)
 	    {
 	    	int data;
-	    	Node1<T> next = null; 
-	        Node1<T> n = new Node1<T>(val,next);
+	    	Node<T> next = null; 
+	        Node<T> n = new Node<T>(val,next);
 	        T number = val;
 	        size++ ;    
 	        if(head ==null)
@@ -60,7 +60,7 @@ public class OrderedLinkedList<T>
 	            System.out.println(head.data);
 	            return;
 	        }
-	        Node1 ptr = head;
+	        Node ptr = head;
 	        System.out.print(head.data+ " ");
 	        ptr = head.next;
 	        while (ptr.next != null)
@@ -72,10 +72,10 @@ public class OrderedLinkedList<T>
 	    }
 	
 	    /*  Function to search given element  */
-		public boolean search(Node1<T> head, int x) 
+		public boolean search(Node<T> head, int x) 
 	    { 
 			
-	        Node1<T> current = head;    //Initialize current 
+	        Node<T> current = head;    //Initialize current 
 	        while (current != null) 
 	        { 
 	        	
@@ -87,7 +87,7 @@ public class OrderedLinkedList<T>
 	    } 
 	
 		  /*  Function to delete an element from given position */
-		public Object Delete(Node1<T> head, int position) 
+		public Object Delete(Node<T> head, int position) 
 		{
 			
 		    if (head == null)
@@ -100,7 +100,7 @@ public class OrderedLinkedList<T>
 		    } 
 		    else 
 		    {
-		        Node1<T> n = head;
+		        Node<T> n = head;
 		        for (int i = 0; i < position - 1; i++)
 		        {
 		            n = n.next;
@@ -113,8 +113,8 @@ public class OrderedLinkedList<T>
 		/*  Function to delete last element from list */
 		public void pop()
 		{
-			 Node1<T> start = head;
-		        Node1<T> prev = null;
+			 Node<T> start = head;
+		        Node<T> prev = null;
 
 		        if(start == null || start.next == null)
 		        {
@@ -133,7 +133,7 @@ public class OrderedLinkedList<T>
 		public int indexOf(T num)
 		{
 		     int size = 1;
-		    Node1<T> current = head.next;
+		    Node<T> current = head.next;
 		    while (current != null) {
 		        if (current.data.equals(num)) {
 		            return size;
@@ -147,7 +147,7 @@ public class OrderedLinkedList<T>
 	
 		public int size() 
 		{
-			 Node1<T> n = head;
+			 Node<T> n = head;
 			 int count=0;
 			 while(n!=null)
 			 {
@@ -164,7 +164,7 @@ public class OrderedLinkedList<T>
 			{
 				throw new IndexOutOfBoundsException();
 			}
-			Node1<T> temp=head;
+			Node<T> temp=head;
 			for(int i=0;i<index;i++)
 			{
 				temp=temp.next;
