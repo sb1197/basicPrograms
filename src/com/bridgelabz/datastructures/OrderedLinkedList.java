@@ -34,7 +34,7 @@ public class OrderedLinkedList<T>
 	        Node<T> n = new Node<T>(val,next);
 	        T number = val;
 	        size++ ;    
-	        if(head ==null)
+	        if(head == null)
 			{
 				head = n;
 				ptr = n;

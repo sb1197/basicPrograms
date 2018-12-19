@@ -19,12 +19,17 @@ public class Stack {
 	void pop(char d)
 	{
 		list.deleteNode(d);
+		size--;
 	}
 	
 	int length()
-	{
-		
+	{		
 		return list.size();
+	}
+	
+	boolean isEmpty()
+	{
+		return list.isEmpty();
 	}
 	
 	

@@ -40,9 +40,10 @@ public class ParanthesesLinkedList
 		Node prev = null;
 		if(temp!=null && temp.data==data)
 		{
-			temp=temp.next;
+			head=temp.next;
+			return;
 		}
-		while(temp.data!=data)
+		while(temp != null && temp.data!=data)
 		{
 			prev=temp;
 			temp=temp.next;
@@ -63,7 +64,16 @@ public class ParanthesesLinkedList
 		 return count;
 	}
 	
-	
+	public boolean isEmpty()
+	{
+	    if (head == null) 
+	    {
+	    	//System.out.println("List is Empty");
+	    	return true;	     
+	    }
+	    else
+	      return false;
+	  }
 	
 	
 	

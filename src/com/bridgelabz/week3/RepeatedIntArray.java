@@ -10,7 +10,7 @@ public class RepeatedIntArray {
 		// TODO Auto-generated method stub
 		
 		//System.out.println("Enter the size of array :");
-		int size = 30; 						//Utility.inputNumber();
+		int size = 6; 						//Utility.inputNumber();
 		int array[] = new int[size];
 		  Random rand = new Random();
 		//System.out.println("Enter the elements of array:");

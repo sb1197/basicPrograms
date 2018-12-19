@@ -17,7 +17,8 @@ public class test {
 			System.out.println("Stack elements to list :");
 			sc.show();
 			System.out.println("Size is :"+sc.length());
-			sc.pop('d');
+			sc.push('e');
+			sc.pop('b');
 			sc.show();
 		
 //		}

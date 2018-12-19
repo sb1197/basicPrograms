@@ -1437,15 +1437,19 @@ public class Utility
 	public static void printRepeating(int arr[], int size)  
 	    { 
 	        int i, j; 
+	        int count=0;
 	        System.out.println("Repeated Elements are :"); 
 	        for (i = 0; i < size; i++)  
 	        { 
 	            for (j = i + 1; j < size; j++)  
 	            { 
 	                if (arr[i] == arr[j])  
-	                    System.out.print(arr[i] + " "); 
+	                   
+	                count++;
+	               
 	            } 
 	        } 
+	        System.out.println(arr[i] +"------ "+count); 
 	    } 
 	  
 
@@ -2171,8 +2175,11 @@ public class Utility
 		                    //System.out.print(arr[i] + " "); 
 		                result[i] = arr[i];
 		                count++;
+		               
 		            } 
+		           
 		        } 
+
 		        return result;
 		  } 
 
